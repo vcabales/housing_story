@@ -371,7 +371,7 @@ blockquote {
 		width: 85%;
 	}
 }
-
+t
 @media (max-width: 1024px) and (min-height: 1024px) { /* iPad */
 	#info {
 		font-size: 2.25vh;

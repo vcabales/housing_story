@@ -29,6 +29,7 @@
     "echarts": "^4.1.0",
     "echarts-stat": "^1.1.1",
     "express": "^4.16.3",
+    "npm": "^6.3.0",
     "papaparse": "^4.5.1",
     "zrender": "^4.0.4"
   }
