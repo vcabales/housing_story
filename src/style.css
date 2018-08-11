@@ -1,0 +1,449 @@
+/* Nice gray in case it's needed: #9197AE */
+/* Just cuz this is kinda cool: #E1EFE6, AEB7B3*/
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
+
+body, html {
+	margin: 0;
+	padding: 0;
+	background-color: #154360;
+}
+
+h1 {
+	color: #D4AC0D;
+}
+
+h1, h2, h3, blockquote {
+	font-family: 'Merriweather', serif;
+}
+
+h2, h3, p, blockquote, caption {
+	color: #EFF6EE;
+}
+
+p, caption {
+	font-family: 'Open Sans', sans-serif;
+	text-align: justify;
+}
+
+#viz1_div, #viz2_div,#viz6_div, #audio2 {
+	background-color: #778899;
+}
+
+#audio1,#viz4_div, #viz5_div, #viz7_div {
+	background-color: #154360;
+}
+
+#viz4_div {
+	height: 180vh;
+}
+
+img {
+	width: 50%;
+	grid-column: 2 / span 1;
+	margin-left: auto;
+	margin-right: auto;
+	grid-row-start: 2;
+	grid-row-end: 2;
+}
+
+#audio1, #audio2 {
+	height: 125vh;
+}
+
+#audio1 h2, #audio2 h2 {
+	grid-column: 2 / span 1;
+	margin-left: auto;
+	margin-right: auto;
+	grid-row-start: 1;
+	grid-row-end: 1;
+	width: 70%;
+	text-align: center;
+}
+
+audio {
+	grid-row-start: 4;
+	grid-row-end: 4;
+	grid-column: 2 / span 1;
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+caption {
+	margin-left: auto;
+	margin-right: auto;
+	grid-row-start: 3;
+	grid-row-end: 3;
+	grid-column: 2 / span 1;
+	font-size: 2vh;
+	margin-top: 5vh;
+	width: 60%;
+}
+
+blockquote {
+	grid-row-start: 5;
+	grid-row-end: 5;
+	grid-column: 2 / span 2;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+	font-style: italic;
+}
+
+.photo-cred {
+	font-style: italic;
+	margin-left: auto;
+	margin-right: auto;
+	grid-column: 2 / span 1;
+	grid-row-start: 3;
+	grid-row-end: 3;
+	font-size: 1.5vh;
+	margin-top: -1vh;
+}
+
+.wrapper-child {
+	display: grid;
+	grid-template-columns:
+    [full-start] minmax(1em, 1fr)
+    [main-start] minmax(0, 56em) [main-end]
+    minmax(1em, 1fr) [full-end];
+  grid-gap: 1em;
+	height: 100vh;
+}
+
+.viz-div {
+	display: grid;
+	grid-template-columns:
+    [full-start] minmax(1em, 1fr)
+    [main-start] minmax(0, 56em) [main-end]
+    minmax(1em, 1fr) [full-end];
+  grid-gap: 1em;
+	height: 120vh;
+}
+
+.echart-div {
+	display: block;
+	height: 100%;
+	width: 70%;
+	grid-column: 2 / span 1;
+	padding-top: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	grid-row-start: 1;
+	grid-row-end: 1;
+}
+
+.chart-caption {
+	font-style: italic;
+	width: 50vw;
+	margin-top: -1vh;
+	margin-bottom: 1vh;
+}
+
+.chart-aside {
+    grid-column: 2 / span 1;
+    /* margin-bottom: 2em; */
+    width: 50vw;
+    margin-left: auto;
+		margin-right: auto;
+}
+
+.chart-aside > p, .chart-aside > h2 {
+	-webkit-transition-delay: 0.5s; /* Safari */
+	transition-delay: 0.5s;
+	-webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+	 -moz-animation: fadein 0.5s; /* Firefox < 16 */
+		-ms-animation: fadein 0.5s; /* Internet Explorer */
+		 -o-animation: fadein 0.5s; /* Opera < 12.1 */
+				animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.viz-div > h2 {
+	grid-column: 2 / span 2;
+	text-align: center;
+}
+
+#header h1 {
+    position: relative;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    font-size: 4em;
+    width: 75%;
+    margin-left: auto;
+		margin-right: auto;
+}
+
+#byline {
+    position: relative;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    text-align: center;
+    margin-top: -15vh;
+		margin-left:auto;
+		margin-right:auto;
+}
+
+#info {
+    position: relative;
+    text-align: justify;
+    grid-column-start: 2;
+		grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    width: 50vw;
+    margin-top: -15vh;
+		margin-left: auto;
+		margin-right: auto;
+}
+
+@media (max-height: 450px) and (max-width: 850px){ /* Landscape mode */
+	#header h1 {
+		font-size: 7vh;
+	}
+	#header > p {
+		font-size: 3.5vh;
+	}
+	.viz-div, #audio1, #audio2 {
+		height: 250vh;
+	}
+	.eachrt-div {
+		height: 35%;
+	}
+	#viz4_div {
+		height: 400vh;
+	}
+	.chart-caption {
+		font-size: 1vh;
+	}
+	img {
+		width: 100%;
+	}
+	audio {
+		width: 100%;
+	}
+	caption {
+		width: 100%;
+		font-size: 2vh;
+	}
+	.chart-caption {
+		font-size: 2vh;
+	}
+	img {
+		width: 50%;
+	}
+}
+
+@media (max-width: 450px) and (min-height: 550px){ /* Portrait mode */
+	#header h1 {
+		font-size: 4vh;
+	}
+	#byline, #info {
+		font-size: 2vh;
+	}
+	.viz-div {
+		height: 130vh;
+	}
+	#viz4_div {
+		height: 200vh;
+	}
+	#audio2 {
+		height: 150vh;
+	}
+	.echart-div {
+		height: 50%;
+		width: 100%;
+	}
+	#chart4_div {
+		height: 50%;
+	}
+	#chart4_aside {
+		margin-top: -50vh;
+	}
+	.chart-aside {
+		font-size: 2vh;
+		width: 70vw;
+		margin-top: -35vh;
+	}
+	#byline {
+		margin-top: -10vh;
+	}
+	#info {
+		width: 80%;
+	}
+	.chart-caption {
+		font-size: 1vh;
+	}
+	img {
+		width: 100%;
+	}
+	#audio1 h2 {
+		width: 100%;
+	}
+	audio {
+		width: 100%;
+	}
+	caption {
+		width: 100%;
+	}
+	blockquote {
+		grid-column: 1 / span 2;
+		width: 80%;
+	}
+}
+
+@media (max-height: 1000px) and (max-width: 1024px) and (min-width: 700px) {
+	#header h1 {
+		font-size: 6vh;
+	}
+	.viz-div {
+		height: 130vh;
+	}
+	.echart-div {
+		height: 85%;
+		width: 80%;
+	}
+	#viz4_div {
+		height: 170vh;
+	}
+	.chart-aside {
+		margin-top: -20vh;
+	}
+}
+
+@media (min-width: 800px) {
+	#chart6-caption {
+		margin-top: -10vh;
+	}
+	#chart4_div {
+		height: 80%;
+	}
+	#chart4_aside {
+		margin-top: -10vh;
+	}
+	#viz4_div {
+		height: 130vh;
+	}
+	#chart6_aside {
+		margin-top: -15vh;
+	}
+}
+
+@media (min-width: 1300px) {
+	.chart-caption {
+		margin-top: -20vh;
+	}
+	img {
+		width: 85%;
+	}
+}
+
+@media (max-width: 1024px) and (min-height: 1024px) { /* iPad */
+	#info {
+		font-size: 2.25vh;
+		width: 60%;
+	}
+	#byline {
+		margin-top: -15vh;
+		font-size: 2.25vh;
+	}
+	#header h1 {
+		margin-top: -5vh;
+		font-size: 6.5vh;
+	}
+	.viz-div {
+		height: 130vh;
+	}
+	.echart-div {
+		height: 65%;
+		width: 100%;
+	}
+	#chart4_div {
+		height: 70%;
+	}
+	#chart7_div {
+		height: 75%;
+	}
+	#viz4_div {
+		height: 200vh;
+		margin-bottom: 5vh;
+	},
+	#chart4_aside {
+		margin-top: 35vh;
+	}
+	.chart-aside {
+		margin-top: -25vh;
+		font-size: 2.5vh;
+	}
+	.chart-caption {
+		width: 70vw;
+		margin-top: 5vh;
+	}
+	.chart-aside {
+		width: 80%;
+	}
+	img {
+		width: 70%;
+		margin-top: -10vh;
+	}
+	.photo-cred {
+		width: 70vw;
+		margin-top: -10vh;
+	}
+	#audio1 caption, #audio2 caption {
+		margin-top: -3vh;
+		width: 75%;
+	}
+	audio {
+		margin-top: -10vh;
+		width: 75%;
+	}
+	blockquote {
+		margin-top: -15vh;
+		width: 70%;
+	}
+	#audio1, #audio2 {
+		height: 110vh;
+	}
+}
+
+#wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+}
