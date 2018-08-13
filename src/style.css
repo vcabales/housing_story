@@ -23,6 +23,13 @@ h2, h3, p, blockquote, caption {
 p, caption {
 	font-family: 'Open Sans', sans-serif;
 	text-align: justify;
+	font-size: 2.5vh;
+}
+
+#chart7_div {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #viz1_div, #viz2_div,#viz6_div, #audio2 {
@@ -83,12 +90,13 @@ caption {
 blockquote {
 	grid-row-start: 5;
 	grid-row-end: 5;
-	grid-column: 2 / span 2;
-	width: 80%;
+	grid-column: 2 / span 1;
+	width: 70%;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: justify;
 	font-style: italic;
+	font-size: 2.5vh;
 }
 
 .photo-cred {
@@ -229,6 +237,7 @@ blockquote {
     margin-top: -15vh;
 		margin-left: auto;
 		margin-right: auto;
+		font-size: 2.5vh;
 }
 
 @media (max-height: 450px) and (max-width: 850px){ /* Landscape mode */
@@ -368,13 +377,55 @@ blockquote {
 		margin-top: -20vh;
 	}
 	img {
-		width: 85%;
+		width: 100%;
+	}
+	#info {
+		width: 45vw;
+	}
+	#header h1 {
+		width: 45vw;
+		font-size: 7vh;
+	}
+	.echart-div {
+		width: 60vw;
+		margin-left: -10vw;
+		height: 50vh;
+	}
+	.chart-aside, .chart-caption {
+		width: 45vw;
+	}
+	#audio1 h2, #audio2 h2 {
+		width: 100%;
+		font-size: 3vh;
+	}
+	audio {
+		width: 80%;
+	}
+	.photo-cred {
+		margin-top: -5vh;
+	}
+	#audio2 img {
+		width: 80%;
+	}
+	caption {
+		width: 100%;
+	}
+	#viz4_div {
+		height: 150vh;
+	}
+	#chart4_div {
+		height: 50vh;
+		width: 60vh;
+		margin-left: 5vw;
+	}
+	#chart6_div {
+		margin-left: -7vw;
 	}
 }
-t
+
 @media (max-width: 1024px) and (min-height: 1024px) { /* iPad */
 	#info {
-		font-size: 2.25vh;
+		font-size: 2.5vh;
 		width: 60%;
 	}
 	#byline {

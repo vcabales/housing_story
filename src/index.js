@@ -4,7 +4,7 @@ import * as echarts from 'echarts/dist/echarts.js';
 import * as ecStat from 'echarts-stat';
 import Nguyen from './Nguyen_Interview.wav';
 import NguyenPhoto from './Nguyen.jpg';
-import Rodriguez from './Rodriguez.wav';
+import Rodriguez from './Rodriguez_clip.mp3';
 import RodriguezPhoto from './Rodriguez.png';
 
 var viewPortTag = document.createElement('meta');
@@ -171,17 +171,25 @@ async function chart2(container) {
 	option = {
 	    tooltip : {
 	        trigger: 'axis',
+					formatter: function (params) {
+							var data = "";
+							for (var i=0;i<params.length;i++) {
+								console.log(params[i].color);
+								data += params[i].seriesName.substring(0,params[i].seriesName.length-7) + ": " + params[i].data + "%" + "<br/>";
+							}
+							return data;
+					},
 	        axisPointer : {
 	            type : 'shadow'
 	        }
 	    },
 			title: {
-				text: 'Housing cost burden by income for renters (2015)',
+				text: 'Percentage of cost burdened renters (2016)',
 				left: 'center'
 			},
 	    legend: {
 					top: '6%',
-	        data: ['Not Rent Burdened (<=30%)', 'Rent Burdened (>30%)', 'Severely Rent Burdened (>50%)']
+	        data: ['Moderately Rent Burdened (>30%)', 'Severely Rent Burdened (>50%)']
 	    },
 	    grid: {
 	        left: '3%',
@@ -190,11 +198,14 @@ async function chart2(container) {
 	        containLabel: true
 	    },
 	    xAxis:  {
-	        type: 'value'
+	        type: 'value',
+					axisLabel: {
+						formatter: "{value}%"
+					}
 	    },
 	    yAxis: {
 	        type: 'category',
-	        data: ['Extremely Low Income','Very Low Income','Low Income','Moderate Income','Above Moderate Income']
+	        data: ['<$15,000','$15,000-29,999','$30,000-44,999','$45,000-74,999','>$75,000']
 	    },
 			toolbox: {
 					feature: {
@@ -205,7 +216,7 @@ async function chart2(container) {
 			},
 	    series: [
 	        {
-	            name: 'Not Rent Burdened (<=30%)',
+	            name: 'Moderately Rent Burdened (>30%)',
 	            type: 'bar',
 	            // stack: '总量',
 	            label: {
@@ -214,19 +225,7 @@ async function chart2(container) {
 	                    position: 'insideRight'
 	                }
 	            },
-	            data: [324550, 432511, 937516, 560052, 1973444]
-	        },
-	        {
-	            name: 'Rent Burdened (>30%)',
-	            type: 'bar',
-	            // stack: '总量',
-	            label: {
-	                normal: {
-	                    show: false,
-	                    position: 'insideRight'
-	                }
-	            },
-	            data: [1268023, 701695, 729112, 243250, 243790]
+	            data: [9.6,26.6,47.6,38.8,10.6]
 	        },
 					{
 							name: 'Severely Rent Burdened (>50%)',
@@ -238,7 +237,7 @@ async function chart2(container) {
 											position: 'insideRight'
 									}
 							},
-							data: [1080429, 389754, 190662, 31344, 17761]
+							data: [78.6,61.0,27.8,7.6,0.5]
 					}
 	    ]
 	};
@@ -280,7 +279,7 @@ async function chart4(container) { // Relationship between median rent and homel
 	let option = null;
 	option = {
 	    title: {
-	        text: 'Median Rent vs Homelessness',
+	        text: 'Median Rent vs Homelessness Rate by State Population',
 	        subtext: 'Research by UCLA Economics Professor William Yu',
 	        sublink: 'https://www.anderson.ucla.edu/centers/ucla-anderson-forecast/june-2018-economic-outlook',
 	        left: 'center',
@@ -292,7 +291,18 @@ async function chart4(container) { // Relationship between median rent and homel
 	        trigger: 'axis',
 	        axisPointer: {
 	            type: 'cross'
-	        }
+	        },
+					formatter: function(params) {
+							var data = "";
+							console.log(params);
+							for (var i=0; i<params.length; i++) {
+									// console.log(my_dict[params[i].value]);
+									data = my_dict[params[0].value] + "<br/>";
+									data += "Homelessness rate: " + params[i].value[1].toString().substring(0,4) + "<br/>" + "Median rent: " + params[i].value[0]+"$";
+							}
+							console.log(data);
+							return data;
+					}
 	    },
 	    xAxis: {
 	        type: 'value',
@@ -520,16 +530,16 @@ function audio2() {
 	caption.appendChild(document.createTextNode("Miriam Rodriguez faced homelessness when she was teen. Now, she is an advocate for affordable housing and shares her family's struggle to pay rent in San Diego. Listen to their story below."));
 	audio2.appendChild(caption);
 
-	var player = document.createElement('audio');
-	player.src = Rodriguez;
-	player.controls = true;
+	var player2 = document.createElement('audio');
+	player2.src = Rodriguez;
+	player2.controls = true;
 	var p = document.createElement('p').appendChild(document.createTextNode("Your browser does not support the audio element."));
-	player.appendChild(p);
-	player.typle = "audio/wav";
-	audio2.appendChild(player);
+	player2.appendChild(p);
+	player2.type = "audio/mp3";
+	audio2.appendChild(player2);
 
 	var quote = document.createElement("BLOCKQUOTE");
-	quote.appendChild(document.createTextNode('"We see families living in cars in San Diego..."'));
+	quote.appendChild(document.createTextNode('"We see families that are living in cars, and this is San Diego..."'));
 	audio2.appendChild(quote);
 
 	return audio2;
@@ -649,7 +659,7 @@ async function chart6(container) {
 	var myChart = echarts.init(container);
 	let option = null;
 	option = {
-	    color: ['#7C9885', '#B5B682', '#FEDC97', '#2589BD', '#C5C5C5'],
+	    color: ['#283D3B', '#197278', '#EDDDD4', '#C44536', '#772E25'],
 	    tooltip: {
 	        trigger: 'axis',
 	        axisPointer: {
@@ -766,7 +776,7 @@ async function chart7(container) { // TODO: Fix formatting
 	};
 
 	option = {
-		color: ['#FFA69E','#FAF3DD','#7D8491','#98473E','#946E83','#63D2FF','#DDF8E8','#E8C547'],
+		color: ['#D782BA','#EDDDD4','#E49273','#08B2E3','#E09F3E','#FCD0A1','#6D9F71','#7180AC'],
 	    title : {
 	        text: '2018-19 CA Budget Homelessness Spending',
 	        x:'center',
@@ -969,14 +979,6 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 	}
 	if ((scrollPos > v4.offsetTop+(v4.offsetTop*0.1)) && (!audio2_trigger)) {
 		audio2_trigger = true;
-
-		var player = document.createElement('audio');
-		player.src = Nguyen;
-		player.controls = true;
-		var p = document.createElement('p').appendChild(document.createTextNode("Your browser does not support the audio element."));
-		player.appendChild(p);
-		player.typle = "audio/wav";
-		a2.appendChild(player);
 	}
 	if ((scrollPos > a2.offsetTop+(a2.offsetTop*0.1)) && (!viz5_trigger)) {
 		viz5_trigger = true;
@@ -1063,7 +1065,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		v7.appendChild(chart7_aside);
 		chart7_aside.classList.add("chart-aside");
 		var h2 = document.createElement('H2');
-		h2.appendChild(document.createTextNode("Budget Info Here"));
+		h2.appendChild(document.createTextNode("Increase in state homelessness and housing affordability spending"));
 		text.push(h2);
 		var p = document.createElement('p');
 		p.appendChild(document.createTextNode("The state budget has set aside nearly $5 billion for housing affordability and homelessness in 2018-19. More than $600 million were allotted to specific homelessness response programs, which include measures to establish permanent housing, provide support for mental health services, and assist homeless youth and victims of domestic violence."));
