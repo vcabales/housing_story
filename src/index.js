@@ -2,7 +2,7 @@ import './style.css';
 import aos from 'aos'; //https://github.com/michalsnik/aos/tree/v2
 import * as echarts from 'echarts/dist/echarts.js';
 import * as ecStat from 'echarts-stat';
-import Nguyen from './Nguyen_Interview.wav';
+import Nguyen from './Nguyen.wav';
 import NguyenPhoto from './Nguyen.jpg';
 import Rodriguez from './Rodriguez_clip.mp3';
 import RodriguezPhoto from './Rodriguez.png';
