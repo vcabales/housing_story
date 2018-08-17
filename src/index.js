@@ -5,7 +5,7 @@ import * as ecStat from 'echarts-stat';
 import Nguyen from './Nguyen.mp3';
 import NguyenPhoto from './Nguyen.jpg';
 import Rodriguez from './Rodriguez_clip.mp3';
-import RodriguezPhoto from './Rodriguez.png';
+import RodriguezPhoto from './Rodriguez.jpg';
 
 var viewPortTag = document.createElement('meta');
 viewPortTag.id = "viewport";
@@ -21,7 +21,7 @@ function header() {
 	// header.classList.add("bg");
 
 	var title = document.createElement('H1');
-	var t = document.createTextNode("We took a deeper look into California's housing crisis.");
+	var t = document.createTextNode("A deeper dive into California's and housing and homelessness crisis.");
 	title.appendChild(t);
 	header.appendChild(title);
 
@@ -153,7 +153,7 @@ function audio1() {
 	audio1.appendChild(player);
 
 	var quote = document.createElement("BLOCKQUOTE");
-	quote.appendChild(document.createTextNode('"The rent was probably 40 to 45 percent of his income... Every year the price would increase."'));
+	quote.appendChild(document.createTextNode('"When we lived in an apartment, every year the price would increase."'));
 	audio1.appendChild(quote);
 
 	return audio1;
@@ -530,14 +530,6 @@ function audio2() {
 	caption.appendChild(document.createTextNode("Miriam Rodriguez faced homelessness when she was teen. Now, she is an advocate for affordable housing and shares her family's struggle to pay rent in San Diego. Listen to their story below."));
 	audio2.appendChild(caption);
 
-	var player2 = document.createElement('audio');
-	player2.src = Rodriguez;
-	player2.controls = true;
-	var p = document.createElement('p').appendChild(document.createTextNode("Your browser does not support the audio element."));
-	player2.appendChild(p);
-	player2.type = "audio/mp3";
-	audio2.appendChild(player2);
-
 	var quote = document.createElement("BLOCKQUOTE");
 	quote.appendChild(document.createTextNode('"We see families that are living in cars, and this is San Diego..."'));
 	audio2.appendChild(quote);
@@ -902,7 +894,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		h2.appendChild(t);
 		text.push(h2);
 		var p = document.createElement('p');
-		p.appendChild(document.createTextNode("Although housing prices have increased steadily, the median household income has not kept up for both homeowners and renters. The median monthly housing costs of homeowners with mortgages in California is 47 percent higher than the national average. Meanwhile, renters pay 50 percent more than the national mean, yet the state’s median household income is only 18 percent higher than the nation’s average."));
+		p.innerHTML = "Although housing prices have increased steadily, the median household income has not kept up for homeowners or renters. The median monthly housing costs of homeowners with mortgages <a href='http://www.ppic.org/wp-content/uploads/r-118hjr.pdf' target='blank'>in California is 47 percent higher than the national average</a>. California renters pay 40 percent more than the national mean, yet the state’s median household income is only 18 percent higher than the nation’s average."
 		text.push(p);
 
 		renderText(chart1_aside,text);
@@ -926,7 +918,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
-		var caption_t = document.createTextNode("Source: National Low Income Housing Coalition");
+		var caption_t = document.createTextNode("Source: Harvard Joint Center for Housing Studies");
 		text.push(caption);
 		caption.appendChild(caption_t);
 
@@ -1077,4 +1069,13 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 w.onscroll = function() {
 	triggerViz(w.scrollTop);
+};
+
+window.onorientationchange = function() {
+		var orientation = window.orientation;
+				switch(orientation) {
+						case 0:
+						case 90:
+						case -90: window.location.reload();
+						break; }
 };

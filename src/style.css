@@ -267,12 +267,6 @@ blockquote {
 		width: 100%;
 		font-size: 2vh;
 	}
-	.chart-caption {
-		font-size: 2vh;
-	}
-	img {
-		width: 50%;
-	}
 }
 
 @media (max-width: 450px) and (min-height: 550px){ /* Portrait mode */
@@ -296,15 +290,18 @@ blockquote {
 		width: 100%;
 	}
 	#chart4_div {
-		height: 50%;
+		height: 30%;
+		width: 100%;
+	}
+	#viz4_div caption {
+		margin-top: 10vh;
 	}
 	#chart4_aside {
-		margin-top: -50vh;
+		margin-top: -20vh;
 	}
 	.chart-aside {
 		font-size: 2vh;
 		width: 70vw;
-		margin-top: -35vh;
 	}
 	#byline {
 		margin-top: -10vh;
@@ -326,6 +323,7 @@ blockquote {
 	}
 	caption {
 		width: 100%;
+		margin-top: 10vh;
 	}
 	blockquote {
 		grid-column: 1 / span 2;
@@ -375,7 +373,7 @@ blockquote {
 		margin-top: -20vh;
 	}
 	img {
-		width: 100%;
+		width: 70%;
 	}
 	#info {
 		width: 45vw;
@@ -385,8 +383,7 @@ blockquote {
 		font-size: 7vh;
 	}
 	.echart-div {
-		width: 60vw;
-		margin-left: -10vw;
+		width: 45vw;
 		height: 50vh;
 	}
 	.chart-aside, .chart-caption {
@@ -403,7 +400,7 @@ blockquote {
 		margin-top: -5vh;
 	}
 	#audio2 img {
-		width: 80%;
+		width: 70%;
 	}
 	caption {
 		width: 100%;
@@ -414,10 +411,7 @@ blockquote {
 	#chart4_div {
 		height: 50vh;
 		width: 60vh;
-		margin-left: 5vw;
-	}
-	#chart6_div {
-		margin-left: -7vw;
+		margin-left: 12vw;
 	}
 }
 
@@ -466,7 +460,7 @@ blockquote {
 		width: 80%;
 	}
 	img {
-		width: 70%;
+		width: 60%;
 		margin-top: -10vh;
 	}
 	.photo-cred {
