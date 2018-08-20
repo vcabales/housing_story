@@ -10,6 +10,14 @@ h1 {
 	color: #D4AC0D;
 }
 
+a {
+	color: #000080;
+}
+
+#viz4_div a, #viz5_div a, #viz7_div a {
+	color: #D4AC0D;
+}
+
 h1, h2, h3, blockquote {
 	font-family: 'Merriweather', serif;
 }
@@ -40,6 +48,10 @@ p, caption {
 
 #viz4_div {
 	height: 180vh;
+}
+
+#chart5_div {
+	height: 70%;
 }
 
 img {
@@ -411,7 +423,6 @@ blockquote {
 	#chart4_div {
 		height: 50vh;
 		width: 60vh;
-		margin-left: 12vw;
 	}
 }
 

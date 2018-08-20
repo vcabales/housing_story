@@ -17,8 +17,6 @@ function header() {
 	var header = document.createElement('section');
 	header.id = "header";
 	header.classList.add("wrapper-child");
-	// header.classList.add("parallax");
-	// header.classList.add("bg");
 
 	var title = document.createElement('H1');
 	var t = document.createTextNode("A deeper dive into California's and housing and homelessness crisis.");
@@ -32,7 +30,7 @@ function header() {
 	header.appendChild(byline);
 
 	var info = document.createElement('p');
-	var t3 = document.createTextNode("Over 130,000 Californians now face homelessness on any given night. Recent research conducted at UCLA found that there is a correlation between high cost of living and homelessness rates. As rents continue to rise, thousands of low-income Californians struggle to meet ends meet, and many live on the edge of homelessness.");
+	var t3 = document.createTextNode("Over 134,000 Californians now face homelessness on any given night. Recent research conducted at UCLA found that there is a correlation between high cost of living and homelessness rates. As rents continue to rise, millions of low-income Californians struggle to meet ends meet, and many live on the edge of homelessness.");
 	info.id = "info";
 	info.appendChild(t3);
 	header.appendChild(info);
@@ -141,7 +139,7 @@ function audio1() {
 	photoCred.className = 'photo-cred';
 	audio1.appendChild(photoCred);
 	var caption = document.createElement('CAPTION');
-	caption.appendChild(document.createTextNode("The Nguyen family struggled to pay their rent for about four years after immigrating from Vietnam. After moving several times, they managed to find permanent housing through Habitat for Humanity. Listen to their story below."));
+	caption.appendChild(document.createTextNode("The Nguyen family struggled to pay their rent for about four years after immigrating from Vietnam in 2008. The family moved from Los Angeles to San Jose to Milpitas. After their mother, Tammy Vo, received a job offer in Stockton in 2009, the two daughters Sammie and Jenny were separated from her for about a year while they were still in high school. During that time, they lived with their father, Khanh Nguyen. The entire family eventually reunited in Sacramento, where they managed to secure permanent housing through Habitat for Humanity. Listen to their story."));
 	audio1.appendChild(caption);
 
 	var player = document.createElement('audio');
@@ -527,12 +525,9 @@ function audio2() {
 	photoCred.className = 'photo-cred';
 	audio2.appendChild(photoCred);
 	var caption = document.createElement('CAPTION');
-	caption.appendChild(document.createTextNode("Miriam Rodriguez faced homelessness when she was teen. Now, she is an advocate for affordable housing and shares her family's struggle to pay rent in San Diego. Listen to their story below."));
+	caption.innerHTML = 'As a teen, Miriam Rodriguez faced homelessness after immigrating from Mexico to reunite with her mother. During this time, she attended high school while living in a garage in Los Angeles. Today, she is an advocate with the Residents United Network of Housing California and a mother of three. Her family is currently struggling to find affordable housing in San Diego. <br/><br/>“One of the things I share with my daughters is to see that we might be struggling, but it’s important to remember that other families are going through worse,” Rodriguez said. “Sometimes as we’re walking to school, we see that other families are living in cars in San Diego. This is an area where I could never imagine seeing that happening.” <br/><br/>';
+	caption.innerHTML += 'Dreams for Change, a San Diego nonprofit that assists homeless individuals, estimates that <a href="http://www.sandiegouniontribune.com/news/homelessness/sd-me-homeless-parkin-20170619-story.html" target="blank">about 1,000 people in the county live in cars.</a>'
 	audio2.appendChild(caption);
-
-	var quote = document.createElement("BLOCKQUOTE");
-	quote.appendChild(document.createTextNode('"We see families that are living in cars, and this is San Diego..."'));
-	audio2.appendChild(quote);
 
 	return audio2;
 }
@@ -927,8 +922,8 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		h2.appendChild(t);
 		text.push(h2);
 		var p = document.createElement('p');
+		p.innerHTML = "Californians who rent and earn less than the state’s median income have been especially hurt by the housing crisis. Over half of the state’s renters pay <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>30 percent or more</a> of their income towards housing. More than 25 percent of renters are severely cost burdened, paying 50 percent or more of their income in rent. Meanwhile, two-thirds of extremely low-income Californians suffer severe cost burdens.";
 		text.push(p);
-		p.appendChild(document.createTextNode("Californians who rent and earn less than the state’s median income have been especially hurt by the housing crisis. Over half of the state’s renters pay 30 percent or more of their income towards housing. More than 25 percent of renters are severely cost burdened, paying 50 percent or more of their income in rent. Meanwhile, two-thirds of extremely low-income Californians suffer severe cost burdens."));
 
 		renderText(chart2_aside,text);
 	}
@@ -956,14 +951,9 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		h2.appendChild(t);
 		text.push(h2);
 		var p = document.createElement('p');
-		p.appendChild(document.createTextNode("Housing prices have skyrocketed in California partly because there is a major shortage of homes within the state. Although California needs to build 180,000 additional units of housing annually to keep up with projected household growth, the state has averaged less than half of that over the past decade. Due to this major shortage, California’s homeownership rate has declined to its lowest rate since the 1940s." ))
+		p.innerHTML = 'Housing prices have skyrocketed in California partly because there is a major shortage of homes within the state. Although California needs to build <a href="https://www.kqed.org/news/11666284/5-reasons-californias-housing-costs-are-so-high" target="blank">180,000 additional units of housing</a> annually to keep up with projected household growth, the state has averaged less than half of that over the past decade. Due to this shortage, <a href="https://lao.ca.gov/reports/2015/finance/housing-costs/housing-costs.aspx" target="blank">California’s homeownership rate has declined to its lowest rate since the 1940s.</a> Today, <a href="https://www.census.gov/quickfacts/fact/table/ca/PST045217#viewtop" target="blank">54.1 percent of Californians own their homes.</a><br/><br/>“A state with higher housing costs, higher rental costs, and lower household income has a higher homelessness rate,” said William Yu, an economics professor at UCLA, said.<br/><br/>';
+		p.innerHTML += "<a href='https://www.anderson.ucla.edu/centers/ucla-anderson-forecast/projects-and-partnerships/allen-matkins/summer/fall-2018-survey' target='blank'>Yu’s research</a> found that median household income, housing supply growth, and population density were also factors in predicting how a state’s homelessness rate would be. ";
 		text.push(p);
-		var p2 = document.createElement('p');
-		p2.appendChild(document.createTextNode('A state with higher housing costs, higher rental costs, and lower household income has a higher homelessness rate,” Yu said.'))
-		text.push(p2);
-		var p3 = document.createElement('p');
-		p3.appendChild(document.createTextNode("His research found that median household income, housing supply growth, and population density were also factors in predicting how high a state’s homelessness rate would be. Yu also cited that 26 percent of the nation’s homeless suffer from mental illness, while 18 percent struggle with substance abuse, and 24 percent identify as victims of domestic violence."))
-		text.push(p3);
 		chart4_aside.classList.add("chart-aside");
 		chart4_aside.id = "chart4_aside";
 
@@ -992,12 +982,12 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		var chart5_aside = document.createElement('div');
 		v5.appendChild(chart5_aside);
 		var h2 = document.createElement('H2');
-		var t = document.createTextNode("Homelessness in California has steadily increased over the past 5 years");
+		var t = document.createTextNode("Homelessness is on the rise");
 		h2.appendChild(t);
 		text.push(h2);
 		chart5_aside.appendChild(h2);
 		var p = document.createElement('p');
-		p.appendChild(document.createTextNode("California alone accounts for 25 percent of the nation’s homeless population, at 130,000 on a given night. The majority of California’s homeless population is chronically homeless, meaning that they have been homeless for a year or more or have experienced at least four episodes of homelessness in the past three years. Chronically homeless individuals are marked by serious mental or physical illnesses."));
+		p.innerHTML = 'California alone accounts for 25 percent of the nation’s homeless population, <a href="https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/" target="blank">at 134,000 on a given night.</a> The majority of California’s unsheltered homeless population is chronically homeless, meaning that they have been homeless for a year or more or have experienced at least four episodes of homelessness in the past three years. Individuals experiencing chronic homelessness often have serious mental or physical illnesses.<br/><br/>According to research from 2017, <a href="https://www.hudexchange.info/resource/reportmanagement/published/CoC_PopSub_State_CA_2017.pdf" target="blank">26 percent of the nation’s total homeless population suffers from mental illness</a>, while 18 percent struggle with substance abuse, and 24 percent identify as victims of domestic violence.';
 		chart5_aside.classList.add("chart-aside");
 		text.push(p);
 
@@ -1025,12 +1015,12 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		chart6_aside.id = "chart6_aside";
 		v6.appendChild(chart6_aside);
 		var h2 = document.createElement('H2');
-		var t = document.createTextNode("Highest percentage of unsheltered homeless individuals in the country");
+		var t = document.createTextNode("Highest count of unsheltered homeless individuals in the country");
 		h2.appendChild(t);
 		text.push(h2);
 		chart6_aside.appendChild(h2);
 		var p = document.createElement('p');
-		p.appendChild(document.createTextNode("The state has the highest percentage of unsheltered homeless individuals in the country, at slightly under 70 percent. This means that the vast majority of the state’s homeless population does not utilize temporary living arrangements provided by either charitable organizations or government programs. Rather, they have been found living on the streets, parks, or other places not meant for human habitation."));
+		p.innerHTML = 'The state has the highest percentage of unsheltered homeless individuals in the country, at slightly under 70 percent, according to <a href="https://www.hudexchange.info/resources/documents/2017-AHAR-Part-1.pdf" target="blank">data</a> from the US Department of Housing and Urban Development. This means that the vast majority of the state’s homeless population is not living in emergency shelters or transitional housing. Instead, they are living on the street or in a place “not meant for human habitation”.';
 		chart6_aside.classList.add("chart-aside");
 		text.push(p);
 
@@ -1060,7 +1050,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		h2.appendChild(document.createTextNode("Increase in state homelessness and housing affordability spending"));
 		text.push(h2);
 		var p = document.createElement('p');
-		p.appendChild(document.createTextNode("The state budget has set aside nearly $5 billion for housing affordability and homelessness in 2018-19. More than $600 million were allotted to specific homelessness response programs, which include measures to establish permanent housing, provide support for mental health services, and assist homeless youth and victims of domestic violence."));
+		p.innerHTML = 'The <a href="http://www.ebudget.ca.gov/FullBudgetSummary.pdf" target="blank">2018 state budget</a> has set aside nearly $5 billion for housing affordability and homelessness. More than $600 million was allotted to specific homelessness response programs, which include measures to establish permanent housing, provide support for mental health services, and assist homeless youth and victims of domestic violence.';
 		text.push(p);
 
 		renderText(chart7_aside,text);
