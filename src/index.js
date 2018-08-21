@@ -775,7 +775,7 @@ async function chart7(container) { // TODO: Fix formatting
 	var my_dict = {'Emergency Homeless Aid Block Grants': "The Homeless Emergency Aid program bridges funding" +"<br/>"+ "for local governments in assisting immediate homeless" +"<br/>"+"needs. The program provides flexible block grants to"+"<br/>"+"jurisdictions that declare a shelter crisis.",
 		"Council Administration" : "The state homeless council works to connect"+"<br/>"+"individuals and families with permanent housing.",
 		"CalWORKS Housing Support Program" : "This program provides funds to help low-income"+"<br/>"+"families secure permanent housing.",
-		"CalWORKS Homeless Assistance Program" : "As part of the CalWORKS program, this program"+"<br/>"+" increases funding for housing insecure families"+"<br/>"+" to $85 per day from $65.",
+		"CalWORKS Homeless Assistance Program" : "As part of CalWORKS, this program increases"+"<br/>"+ "funding for housing insecure families to $85"+"<br/>"+ "per day from $65.",
 		"Senior Home Safe Program" : "Funded by CalWORKs, this program was intended"+"<br/>"+"to provide housing-related support to seniors at"+"<br/>"+"risk of homelessness.",
 		"Domestic Violence Shelters and Services" : "Funded by the California Office of Emergency Services, this"+"<br/>"+"program focuses on assisting victims of domestic violence.",
 		"Homeless Youth and Exploitation Program" : "Funded by the California Office of Emergency Services, this program"+"<br/>"+"focuses on assisting homeless youth.",
