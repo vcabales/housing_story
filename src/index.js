@@ -19,7 +19,7 @@ function header() {
 	header.classList.add("wrapper-child");
 
 	var title = document.createElement('H1');
-	var t = document.createTextNode("A deeper dive into California's and housing and homelessness crisis.");
+	var t = document.createTextNode("A deeper dive into California's housing and homelessness crisis");
 	title.appendChild(t);
 	header.appendChild(title);
 
@@ -81,12 +81,17 @@ async function chart1(container) { // https://infogram.com/rents-vs-renter-incom
 	    },
 	    xAxis: {
 	        type: 'category',
+					name: "Year",
+					nameLocation: "middle",
+					nameGap: 25,
 	        boundaryGap: false,
 	        data: ['2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014']
 	    },
 	    yAxis: {
 	        type: 'value',
-					name: "%",
+					name: "% Change",
+					nameGap: 30,
+					nameLocation: "middle",
 					axisLabel: {
 						formatter: "{value}%"
 					}
@@ -135,11 +140,11 @@ function audio1() {
 	img.id = "Nguyen-photo";
 	audio1.appendChild(img);
 	var photoCred = document.createElement('p');
-	photoCred.appendChild(document.createTextNode("The Nguyen family sitting in their home in Sacramento built by Habitat for Humanity. Photo Credit: Robbie Short"));
+	photoCred.appendChild(document.createTextNode("Jenny Nguyen, with her parents Khanh Nguyen and Tammy Vo, sitting in their home in Sacramento built by Habitat for Humanity. Photo Credit: Robbie Short"));
 	photoCred.className = 'photo-cred';
 	audio1.appendChild(photoCred);
 	var caption = document.createElement('CAPTION');
-	caption.appendChild(document.createTextNode("The Nguyen family struggled to pay their rent for about four years after immigrating from Vietnam in 2008. The family moved from Los Angeles to San Jose to Milpitas. After their mother, Tammy Vo, received a job offer in Stockton in 2009, the two daughters Sammie and Jenny were separated from her for about a year while they were still in high school. During that time, they lived with their father, Khanh Nguyen. The entire family eventually reunited in Sacramento, where they managed to secure permanent housing through Habitat for Humanity. Listen to their story."));
+	caption.appendChild(document.createTextNode("The Nguyen family struggled to pay their rent for about four years after immigrating from Vietnam in 2008. The family bounced around from Los Angeles to San Jose to Milpitas, separating at times because of housing costs.. They eventually managed to secure permanent housing  in Sacramento through Habitat for Humanity. Listen to their story."));
 	audio1.appendChild(caption);
 
 	var player = document.createElement('audio');
@@ -182,7 +187,7 @@ async function chart2(container) {
 	        }
 	    },
 			title: {
-				text: 'Percentage of cost burdened renters (2016)',
+				text: 'Percentage of Cost Burdened Renters in CA (2016)',
 				left: 'center'
 			},
 	    legend: {
@@ -197,12 +202,18 @@ async function chart2(container) {
 	    },
 	    xAxis:  {
 	        type: 'value',
+					name: 'Percentage of Cost Burdened Renters in CA',
+					nameLocation: 'middle',
+					nameGap: 25,
 					axisLabel: {
 						formatter: "{value}%"
 					}
 	    },
 	    yAxis: {
 	        type: 'category',
+					name: 'Income Brackets in CA',
+					nameLocation: 'middle',
+					nameGap: 100,
 	        data: ['<$15,000','$15,000-29,999','$30,000-44,999','$45,000-74,999','>$75,000']
 	    },
 			toolbox: {
@@ -262,10 +273,10 @@ async function chart4(container) { // Relationship between median rent and homel
 	var result = await resolveAfterTrigger();
 	var myChart = echarts.init(container);
 	var data = [[689, 0.108206], [1120, 0.261759], [888, 0.172702], [640, 0.142886], [1200, 0.315889], [934, 0.323311], [1019, 0.116991], [960, 0.109939], [954, 0.285244], [837, 0.206999], [1379, 0.448458], [702, 0.123411], [868, 0.109827], [715, 0.095767], [661, 0.095239], [711, 0.093023], [636, 0.119306], [747, 0.168858], [744, 0.180182], [1170, 0.160464], [1036, 0.262792], [748, 0.127364], [813, 0.144002], [666, 0.080893], [706, 0.169958], [681, 0.182657], [692, 0.204274], [944, 0.308711], [967, 0.113254], [1148, 0.146643], [753, 0.155741], [1079, 0.354469], [756, 0.138632], [644, 0.098092], [700, 0.121045], [686, 0.13189], [862, 0.40648], [798, 0.115413], [878, 0.1213], [754, 0.104153], [651, 0.103174], [730, 0.146125], [831, 0.130576], [851, 0.123571], [860, 0.18542], [1068, 0.102874], [954, 0.297552], [607, 0.129894], [743, 0.105347], [742, 0.314425], [743, 0.077809], [1208, 0.249393], [976, 0.127518], [701, 0.082116], [1375, 0.339629], [1171, 0.195108], [1115, 0.094421], [1048, 0.103333], [1086, 0.1534], [933, 0.097551], [1483, 0.505766], [790, 0.118641], [950, 0.084346], [768, 0.081568], [741, 0.087611], [789, 0.072019], [707, 0.090364], [808, 0.070554], [797, 0.170671], [1314, 0.119742], [1179, 0.256056], [818, 0.090852], [912, 0.137503], [728, 0.049328], [771, 0.10184], [741, 0.145551], [769, 0.130255], [1003, 0.261271], [1026, 0.108431], [1244, 0.094785], [804, 0.118866], [1194, 0.45091], [839, 0.087235], [776, 0.144163], [759, 0.086588], [744, 0.106821], [1015, 0.336803], [881, 0.110405], [948, 0.111359], [841, 0.07794], [706, 0.108432], [806, 0.12372], [956, 0.083195], [954, 0.091946], [925, 0.196422], [1159, 0.071629], [1135, 0.285076], [682, 0.072087], [802, 0.08674], [840, 0.150695]];
-	var states = ['y12_AL', 'y12_AK', 'y12_AZ', 'y12_AR', 'y12_CA', 'y12_CO', 'y12_CT', 'y12_DE', 'y12_FL', 'y12_GA', 'y12_HI', 'y12_ID', 'y12_IL', 'y12_IN', 'y12_IA', 'y12_KS', 'y12_KY', 'y12_LA', 'y12_ME', 'y12_MD', 'y12_MA', 'y12_MI', 'y12_MN', 'y12_MS', 'y12_MO', 'y12_MT', 'y12_NE', 'y12_NV', 'y12_NH', 'y12_NJ', 'y12_NM', 'y12_NY', 'y12_NC', 'y12_ND', 'y12_OH', 'y12_OK', 'y12_OR', 'y12_PA', 'y12_RI', 'y12_SC', 'y12_SD', 'y12_TN', 'y12_TX', 'y12_UT', 'y12_VT', 'y12_VA', 'y12_WA', 'y12_WV', 'y12_WI', 'y12_WY', 'y17_AL', 'y17_AK', 'y17_AZ', 'y17_AR', 'y17_CA', 'y17_CO', 'y17_CT', 'y17_DE', 'y17_FL', 'y17_GA', 'y17_HI', 'y17_ID', 'y17_IL', 'y17_IN', 'y17_IA', 'y17_KS', 'y17_KY', 'y17_LA', 'y17_ME', 'y17_MD', 'y17_MA', 'y17_MI', 'y17_MN', 'y17_MS', 'y17_MO', 'y17_MT', 'y17_NE', 'y17_NV', 'y17_NH', 'y17_NJ', 'y17_NM', 'y17_NY', 'y17_NC', 'y17_ND', 'y17_OH', 'y17_OK', 'y17_OR', 'y17_PA', 'y17_RI', 'y17_SC', 'y17_SD', 'y17_TN', 'y17_TX', 'y17_UT', 'y17_VT', 'y17_VA', 'y17_WA', 'y17_WV', 'y17_WI', 'y17_WY'];
+	var states = ["AL 12", "AK 12", "AZ '12", "AR '12", "CA '12", "CO '12", "CT '12", "DE '12", "FL '12", "GA '12", "HI '12", "ID '12", "IL '12", "IN '12", "IA '12", "KS '12", "KY '12", "LA '12", "ME '12", "MD '12", "MA '12", "MI '12", "MN '12", "MS '12", "MO '12", "MT '12", "NE '12", "NV '12", "NH '12", "NJ '12", "NM '12", "NY '12", "NC '12", "ND '12", "OH '12", "OK '12", "OR '12", "PA '12", "RI '12", "SC '12", "SD '12", "TN '12", "TX '12", "UT '12", "VT '12", "VA '12", "WA '12", "WV '12'", "W '12", "WY '12", "AL '17", "AK '17", "AZ '17", "AR '17", "CA '17", "CO '17", "CT '17", "DE '17", "FL '17", "GA '17", "HI '17", "ID '17", "IL '17", 'y17_IN', "IA '17", "KS '17", "KY '17", "LA '17", "ME '17", "MD '17", "MA '17", "MI '17", "MN '17", "MS '17", "MO '17", "MT '17", "NE '17", "NV '17", "NH '17", "NJ '17", "NM '17", "NY '17", "NC '17", "ND '17", "OH '17", "OK '17", "OR '17", "PA '17", "RI '17", "SC '17", "SD '17", "TN '17", "TX '17", "UT '17", "VT '17", "VA '17", "WA '17", "WV '17", "WI '17", "WY '17"];
 	var my_dict = {};
 	for (var i=0; i< data.length; i++) {
-		my_dict[data[i]] = states[i].substring(4,6);
+		my_dict[data[i]] = states[i];
 	}
 
 	// See https://github.com/ecomfe/echarts-stat
@@ -296,7 +307,7 @@ async function chart4(container) { // Relationship between median rent and homel
 							for (var i=0; i<params.length; i++) {
 									// console.log(my_dict[params[i].value]);
 									data = my_dict[params[0].value] + "<br/>";
-									data += "Homelessness rate: " + params[i].value[1].toString().substring(0,4) + "<br/>" + "Median rent: " + params[i].value[0]+"$";
+									data += "Homelessness rate: " + params[i].value[1].toString().substring(0,4) + "<br/>" + "Median rent: $" + params[i].value[0];
 							}
 							console.log(data);
 							return data;
@@ -305,6 +316,9 @@ async function chart4(container) { // Relationship between median rent and homel
 	    xAxis: {
 	        type: 'value',
 	        min: 600,
+					name: 'Median Rent',
+					nameLocation: 'middle',
+					nameGap: 25,
 					axisLine: {
 						lineStyle: {
 							color: '#C0C0C0'
@@ -319,6 +333,9 @@ async function chart4(container) { // Relationship between median rent and homel
 	    },
 	    yAxis: {
 	        type: 'value',
+					name: 'Homelessness Rate',
+					nameLocation: 'middle',
+					nameGap: 35,
 					axisLine: {
 						lineStyle: {
 							color: '#C0C0C0'
@@ -508,8 +525,6 @@ function audio2() {
 	var audio2 = document.createElement('section');
 	audio2.id = "audio2";
 	audio2.classList.add("wrapper-child");
-	// audio2.classList.add("parallax");
-	// audio2.classList.add("bg");
 
 	var h2 = document.createElement('H2');
 	var t = document.createTextNode("As rents continue to increase, families fight for housing security.");
@@ -542,7 +557,7 @@ async function chart5(container) {
 	option = {
 			color: ['#cc3700', '#0066CC'],
 			title: {
-				text: 'Sheltered vs Unsheltered Homeless',
+				text: 'Sheltered vs Unsheltered Homeless in CA',
 				left: 'center',
 				textStyle: {
 					color:'#EFF6EE'
@@ -577,6 +592,9 @@ async function chart5(container) {
 	    xAxis : [
 	        {
 	            type : 'value',
+							name: 'Number of Homeless',
+							nameLocation: 'middle',
+							nameGap: 20,
 							axisLine: {
 								lineStyle: {
 									color: '#EFF6EE'
@@ -587,6 +605,9 @@ async function chart5(container) {
 	    yAxis : [
 	        {
 	            type : 'category',
+							name: 'Year',
+							nameLocation: 'middle',
+							nameGap: 40,
 							axisLine: {
 								lineStyle: {
 									color: '#EFF6EE'
@@ -632,8 +653,6 @@ function viz5_div() {
 	var viz5_div = document.createElement('section');
 	viz5_div.id = "viz5_div";
 	viz5_div.classList.add("viz-div");
-	// viz5_div.classList.add("parallax");
-	// viz5_div.classList.add("bg");
 
 	return viz5_div;
 }
@@ -677,6 +696,9 @@ async function chart6(container) {
 	    xAxis: [
 	        {
 	            type: 'category',
+							name: 'Year',
+							nameLocation: 'middle',
+							nameGap: 25,
 	            axisTick: {show: false},
 	            data: ['2007','2008','2009','2010','2011','2012', '2013', '2014', '2015', '2016','2017']
 	        }
@@ -684,9 +706,9 @@ async function chart6(container) {
 	    yAxis: [
 	        {
 	            type: 'value',
-							nameTextStyle: {
-								color: '#EFF6EE'
-							}
+							name: 'Numbre of Homeless',
+							nameLocation: 'middle',
+							nameGap: 50
 	        }
 	    ],
 	    series: [
@@ -728,8 +750,6 @@ function viz6_div() {
 	var viz6_div = document.createElement('section');
 	viz6_div.id = "viz6_div";
 	viz6_div.classList.add("viz-div");
-	// viz6_div.classList.add("parallax");
-	// viz6_div.classList.add("bg");
 
 	return viz6_div;
 }
@@ -755,8 +775,8 @@ async function chart7(container) { // TODO: Fix formatting
 	var my_dict = {'Emergency Homeless Aid Block Grants': "The Homeless Emergency Aid program bridges funding" +"<br/>"+ "for local governments in assisting immediate homeless" +"<br/>"+"needs. The program provides flexible block grants to"+"<br/>"+"jurisdictions that declare a shelter crisis.",
 		"Council Administration" : "The state homeless council works to connect"+"<br/>"+"individuals and families with permanent housing.",
 		"CalWORKS Housing Support Program" : "This program provides funds to help low-income"+"<br/>"+"families secure permanent housing.",
-		"CalWORKS Homeless Assistance Program" : "As part of the CalWORKS program, this funding"+"<br/>"+"allows increases funding for housing insecure"+"<br/>"+"families to $85 per day from $65.",
-		"Senior Home Safe Program" : "Funded by CalWORKs this program was intended"+"<br/>"+"to provide housing-related support to seniors at"+"<br/>"+"risk of homelessness.",
+		"CalWORKS Homeless Assistance Program" : "As part of the CalWORKS program, this program"+"<br/>"+" increases funding for housing insecure families"+"<br/>"+" to $85 per day from $65.",
+		"Senior Home Safe Program" : "Funded by CalWORKs, this program was intended"+"<br/>"+"to provide housing-related support to seniors at"+"<br/>"+"risk of homelessness.",
 		"Domestic Violence Shelters and Services" : "Funded by the California Office of Emergency Services, this"+"<br/>"+"program focuses on assisting victims of domestic violence.",
 		"Homeless Youth and Exploitation Program" : "Funded by the California Office of Emergency Services, this program"+"<br/>"+"focuses on assisting homeless youth.",
 		"Homeless and Mental Illness Program" : "The Department of Health Care Services allotted $5 million"+"<br/>"+"to provide intensive outreach and treatment for homeless"+"<br/>"+"individuals who have mental health service needs."
@@ -765,7 +785,7 @@ async function chart7(container) { // TODO: Fix formatting
 	option = {
 		color: ['#D782BA','#EDDDD4','#E49273','#08B2E3','#E09F3E','#FCD0A1','#6D9F71','#7180AC'],
 	    title : {
-	        text: '2018-19 CA Budget Homelessness Spending',
+	        text: 'New Homelessness Spending in CA',
 	        x:'center',
 					textStyle: {
 						color: '#EFF6EE'
@@ -918,11 +938,11 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		caption.appendChild(caption_t);
 
 		var h2 = document.createElement('H2');
-		var t = document.createTextNode("Low-income Californians are severely cost burdened");
+		var t = document.createTextNode("Low-income Californians are severely housing cost burdened");
 		h2.appendChild(t);
 		text.push(h2);
 		var p = document.createElement('p');
-		p.innerHTML = "Californians who rent and earn less than the state’s median income have been especially hurt by the housing crisis. Over half of the state’s renters pay <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>30 percent or more</a> of their income towards housing. More than 25 percent of renters are severely cost burdened, paying 50 percent or more of their income in rent. Meanwhile, two-thirds of extremely low-income Californians suffer severe cost burdens.";
+		p.innerHTML = "Californian renters who earn less than the state’s median income have been especially hurt by the housing crisis. Over half of the state’s renters pay <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>30 percent or more</a> of their income towards housing. More than 25 percent of renters are severely cost burdened, paying 50 percent or more of their income in rent. Meanwhile, two-thirds of extremely low-income Californians <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>suffer severe cost burdens.</a> ";
 		text.push(p);
 
 		renderText(chart2_aside,text);
@@ -1015,7 +1035,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		chart6_aside.id = "chart6_aside";
 		v6.appendChild(chart6_aside);
 		var h2 = document.createElement('H2');
-		var t = document.createTextNode("Highest count of unsheltered homeless individuals in the country");
+		var t = document.createTextNode("California has the most unsheltered homeless individuals in the country");
 		h2.appendChild(t);
 		text.push(h2);
 		chart6_aside.appendChild(h2);
