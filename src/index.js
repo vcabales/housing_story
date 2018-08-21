@@ -83,7 +83,7 @@ async function chart1(container) { // https://infogram.com/rents-vs-renter-incom
 	        type: 'category',
 					name: "Year",
 					nameLocation: "middle",
-					nameGap: 25,
+					nameGap: 20,
 	        boundaryGap: false,
 	        data: ['2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014']
 	    },
@@ -204,7 +204,7 @@ async function chart2(container) {
 	        type: 'value',
 					name: 'Percentage of Cost Burdened Renters in CA',
 					nameLocation: 'middle',
-					nameGap: 25,
+					nameGap: 20,
 					axisLabel: {
 						formatter: "{value}%"
 					}
@@ -594,7 +594,7 @@ async function chart5(container) {
 	            type : 'value',
 							name: 'Number of Homeless',
 							nameLocation: 'middle',
-							nameGap: 20,
+							nameGap: 19,
 							axisLine: {
 								lineStyle: {
 									color: '#EFF6EE'
