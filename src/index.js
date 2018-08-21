@@ -6,6 +6,7 @@ import Nguyen from './Nguyen.mp3';
 import NguyenPhoto from './Nguyen.jpg';
 import Rodriguez from './Rodriguez_clip.mp3';
 import RodriguezPhoto from './Rodriguez.jpg';
+import * as pym from 'pym.js';
 
 var viewPortTag = document.createElement('meta');
 viewPortTag.id = "viewport";
@@ -1076,6 +1077,8 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		renderText(chart7_aside,text);
 	}
 }
+
+var pymChild = new pym.Child();
 
 w.onscroll = function() {
 	triggerViz(w.scrollTop);
