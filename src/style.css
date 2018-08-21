@@ -51,7 +51,7 @@ p, caption {
 }
 
 #chart5_div {
-	height: 70%;
+	height: 60%;
 }
 
 img {
@@ -424,6 +424,9 @@ blockquote {
 	#chart4_div {
 		height: 50vh;
 		width: 60vh;
+	}
+	#chart5_div {
+		height: 65%;
 	}
 }
 

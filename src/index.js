@@ -82,17 +82,11 @@ async function chart1(container) { // https://infogram.com/rents-vs-renter-incom
 	    },
 	    xAxis: {
 	        type: 'category',
-					name: "Year",
-					nameLocation: "middle",
-					nameGap: 20,
 	        boundaryGap: false,
 	        data: ['2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014']
 	    },
 	    yAxis: {
 	        type: 'value',
-					name: "% Change",
-					nameGap: 30,
-					nameLocation: "middle",
 					axisLabel: {
 						formatter: "{value}%"
 					}
@@ -188,7 +182,7 @@ async function chart2(container) {
 	        }
 	    },
 			title: {
-				text: 'Percentage of Cost Burdened Renters in CA (2016)',
+				text: 'Cost Burdened Renters in CA',
 				left: 'center'
 			},
 	    legend: {
@@ -203,7 +197,7 @@ async function chart2(container) {
 	    },
 	    xAxis:  {
 	        type: 'value',
-					name: 'Percentage of Cost Burdened Renters in CA',
+					name: 'Percentage of Renters',
 					nameLocation: 'middle',
 					nameGap: 20,
 					axisLabel: {
@@ -212,7 +206,7 @@ async function chart2(container) {
 	    },
 	    yAxis: {
 	        type: 'category',
-					name: 'Income Brackets in CA',
+					name: 'Renter Income',
 					nameLocation: 'middle',
 					nameGap: 100,
 	        data: ['<$15,000','$15,000-29,999','$30,000-44,999','$45,000-74,999','>$75,000']
@@ -308,7 +302,7 @@ async function chart4(container) { // Relationship between median rent and homel
 							for (var i=0; i<params.length; i++) {
 									// console.log(my_dict[params[i].value]);
 									data = my_dict[params[0].value] + "<br/>";
-									data += "Homelessness rate: " + params[i].value[1].toString().substring(0,4) + "<br/>" + "Median rent: $" + params[i].value[0];
+									data += "Homelessness rate: " + params[i].value[1].toString().substring(0,4) + "%" + "<br/>" + "Median rent: $" + params[i].value[0];
 							}
 							console.log(data);
 							return data;
@@ -331,12 +325,18 @@ async function chart4(container) { // Relationship between median rent and homel
 									color: '#EFF6EE'
 	            }
 	        },
+					axisLabel: {
+						formatter: "${value}"
+					}
 	    },
 	    yAxis: {
 	        type: 'value',
-					name: 'Homelessness Rate',
+					name: 'Homeless % of Total Population',
 					nameLocation: 'middle',
-					nameGap: 35,
+					nameGap: 40,
+					axisLabel: {
+						formatter: "{value}%"
+					},
 					axisLine: {
 						lineStyle: {
 							color: '#C0C0C0'
@@ -578,7 +578,7 @@ async function chart5(container) {
 	        }
 	    },
 	    legend: {
-					top: '6%',
+					top: '7%',
 	        data:['Sheltered', 'Unsheltered'],
 					textStyle: {
 						color: '#EFF6EE'
@@ -595,7 +595,7 @@ async function chart5(container) {
 	            type : 'value',
 							name: 'Number of Homeless',
 							nameLocation: 'middle',
-							nameGap: 19,
+							nameGap: 18,
 							axisLine: {
 								lineStyle: {
 									color: '#EFF6EE'
@@ -666,7 +666,7 @@ async function chart6(container) {
 	var myChart = echarts.init(container);
 	let option = null;
 	option = {
-	    color: ['#283D3B', '#197278', '#EDDDD4', '#C44536', '#772E25'],
+	    color: ['#ED9200', '#A4303F', '#3E77E0', '#DABFFF', '#FFF78C'],
 	    tooltip: {
 	        trigger: 'axis',
 	        axisPointer: {
@@ -697,9 +697,6 @@ async function chart6(container) {
 	    xAxis: [
 	        {
 	            type: 'category',
-							name: 'Year',
-							nameLocation: 'middle',
-							nameGap: 25,
 	            axisTick: {show: false},
 	            data: ['2007','2008','2009','2010','2011','2012', '2013', '2014', '2015', '2016','2017']
 	        }
@@ -780,7 +777,7 @@ async function chart7(container) { // TODO: Fix formatting
 		"Senior Home Safe Program" : "Funded by CalWORKs, this program was intended"+"<br/>"+"to provide housing-related support to seniors at"+"<br/>"+"risk of homelessness.",
 		"Domestic Violence Shelters and Services" : "Funded by the California Office of Emergency Services, this"+"<br/>"+"program focuses on assisting victims of domestic violence.",
 		"Homeless Youth and Exploitation Program" : "Funded by the California Office of Emergency Services, this program"+"<br/>"+"focuses on assisting homeless youth.",
-		"Homeless and Mental Illness Program" : "The Department of Health Care Services allotted $5 million"+"<br/>"+"to provide intensive outreach and treatment for homeless"+"<br/>"+"individuals who have mental health service needs."
+		"Homeless and Mental Illness Program" : "The Department of Health Care Services allotted $50 million"+"<br/>"+"to provide intensive outreach and treatment for homeless"+"<br/>"+"individuals who have mental health service needs."
 	};
 
 	option = {
@@ -898,9 +895,10 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
-		var caption_t = document.createTextNode("Source: California Department of Housing and Community Development, California Housing Partnership. All figures in 2000 dollars.");
+		caption.innerHTML = "<a href='http://www.hcd.ca.gov/policy-research/plans-reports/docs/SHA_MainDoc_2_15_Final.pdf' target='blank'>Source: California Department of Housing and Community Development, California Housing Partnership. All figures in 2000 dollars.</a>";
+		// var caption_t = document.createTextNode("Source: California Department of Housing and Community Development, California Housing Partnership. All figures in 2000 dollars.");
 		text.push(caption);
-		caption.appendChild(caption_t);
+		// caption.appendChild(caption_t);
 
 		var chart1_aside = document.createElement('div');
 		chart1_aside.classList.add("chart-aside");
@@ -910,7 +908,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		h2.appendChild(t);
 		text.push(h2);
 		var p = document.createElement('p');
-		p.innerHTML = "Although housing prices have increased steadily, the median household income has not kept up for homeowners or renters. The median monthly housing costs of homeowners with mortgages <a href='http://www.ppic.org/wp-content/uploads/r-118hjr.pdf' target='blank'>in California is 47 percent higher than the national average</a>. California renters pay 40 percent more than the national mean, yet the state’s median household income is only 18 percent higher than the nation’s average."
+		p.innerHTML = "Although housing prices have increased steadily, the median household income has not kept up for homeowners or renters. The median monthly housing costs of homeowners with mortgages <a href='http://www.ppic.org/wp-content/uploads/r-118hjr.pdf' target='blank'>in California is 47 percent higher than the national average</a>. California renters pay 40 percent more than the national mean, yet the state’s median household income is only 18 percent higher than the nation’s average, according to the Public Policy Institute of California."
 		text.push(p);
 
 		renderText(chart1_aside,text);
@@ -934,16 +932,15 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
-		var caption_t = document.createTextNode("Source: Harvard Joint Center for Housing Studies");
+		caption.innerHTML = "<a href='http://www.jchs.harvard.edu/research/americas-rental-housing-2017' target='blank'>Source: Harvard Joint Center for Housing Studies 2016</a>";
 		text.push(caption);
-		caption.appendChild(caption_t);
 
 		var h2 = document.createElement('H2');
 		var t = document.createTextNode("Low-income Californians are severely housing cost burdened");
 		h2.appendChild(t);
 		text.push(h2);
 		var p = document.createElement('p');
-		p.innerHTML = "Californian renters who earn less than the state’s median income have been especially hurt by the housing crisis. Over half of the state’s renters pay <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>30 percent or more</a> of their income towards housing. More than 25 percent of renters are severely cost burdened, paying 50 percent or more of their income in rent. Meanwhile, two-thirds of extremely low-income Californians <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>suffer severe cost burdens.</a> ";
+		p.innerHTML = "Californian renters who earn less than the state’s median income have been especially hurt by the housing crisis. Over half of the state’s renters pay <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>30 percent or more</a> of their income towards housing. More than 25 percent of renters are severely cost burdened, paying 50 percent or more of their income in rent. Meanwhile, two-thirds of extremely low-income Californians <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>suffer severe cost burdens, according to the California Budget & Policy Center.</a> ";
 		text.push(p);
 
 		renderText(chart2_aside,text);
@@ -972,8 +969,8 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		h2.appendChild(t);
 		text.push(h2);
 		var p = document.createElement('p');
-		p.innerHTML = 'Housing prices have skyrocketed in California partly because there is a major shortage of homes within the state. Although California needs to build <a href="https://www.kqed.org/news/11666284/5-reasons-californias-housing-costs-are-so-high" target="blank">180,000 additional units of housing</a> annually to keep up with projected household growth, the state has averaged less than half of that over the past decade. Due to this shortage, <a href="https://lao.ca.gov/reports/2015/finance/housing-costs/housing-costs.aspx" target="blank">California’s homeownership rate has declined to its lowest rate since the 1940s.</a> Today, <a href="https://www.census.gov/quickfacts/fact/table/ca/PST045217#viewtop" target="blank">54.1 percent of Californians own their homes.</a><br/><br/>“A state with higher housing costs, higher rental costs, and lower household income has a higher homelessness rate,” said William Yu, an economics professor at UCLA, said.<br/><br/>';
-		p.innerHTML += "<a href='https://www.anderson.ucla.edu/centers/ucla-anderson-forecast/projects-and-partnerships/allen-matkins/summer/fall-2018-survey' target='blank'>Yu’s research</a> found that median household income, housing supply growth, and population density were also factors in predicting how a state’s homelessness rate would be. ";
+		p.innerHTML = 'Housing prices have skyrocketed in California partly because there is a major shortage of homes within the state. Although California needs to build <a href="https://www.kqed.org/news/11666284/5-reasons-californias-housing-costs-are-so-high" target="blank">180,000 additional units of housing</a> annually to keep up with projected household growth, the state has averaged less than half of that over the past decade. Due to this shortage, <a href="https://lao.ca.gov/reports/2015/finance/housing-costs/housing-costs.aspx" target="blank">California’s homeownership rate has declined to its lowest rate since the 1940s.</a> Today, <a href="https://www.census.gov/quickfacts/fact/table/ca/PST045217#viewtop" target="blank">54.1 percent of Californians own their homes.</a><br/><br/>“A state with higher housing costs, higher rental costs, and lower household income has a higher homelessness rate,” said William Yu, an economics professor at UCLA.<br/><br/>';
+		p.innerHTML += "Yu’s research found that median household income, housing supply growth, and population density also factor in predicting a state's homelessness rate. ";
 		text.push(p);
 		chart4_aside.classList.add("chart-aside");
 		chart4_aside.id = "chart4_aside";
@@ -996,9 +993,8 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
-		var caption_t = document.createTextNode("Source: Department of Housing and Urban Development");
+		caption.innerHTML = "<a href='https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/' target='blank'>Source: Department of Housing and Urban Development</>";
 		text.push(caption);
-		caption.appendChild(caption_t);
 
 		var chart5_aside = document.createElement('div');
 		v5.appendChild(chart5_aside);
@@ -1008,7 +1004,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		text.push(h2);
 		chart5_aside.appendChild(h2);
 		var p = document.createElement('p');
-		p.innerHTML = 'California alone accounts for 25 percent of the nation’s homeless population, <a href="https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/" target="blank">at 134,000 on a given night.</a> The majority of California’s unsheltered homeless population is chronically homeless, meaning that they have been homeless for a year or more or have experienced at least four episodes of homelessness in the past three years. Individuals experiencing chronic homelessness often have serious mental or physical illnesses.<br/><br/>According to research from 2017, <a href="https://www.hudexchange.info/resource/reportmanagement/published/CoC_PopSub_State_CA_2017.pdf" target="blank">26 percent of the nation’s total homeless population suffers from mental illness</a>, while 18 percent struggle with substance abuse, and 24 percent identify as victims of domestic violence.';
+		p.innerHTML = 'California alone accounts for 25 percent of the nation’s homeless population, <a href="https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/" target="blank">at 134,000 on a given night.</a> The majority of California’s unsheltered homeless population is chronically homeless, meaning that they have been homeless for a year or more or have experienced at least four episodes of homelessness in the past three years. Individuals experiencing chronic homelessness often have serious mental or physical illnesses.<br/><br/>According to the Department of Housing and Urban Development, <a href="https://www.hudexchange.info/resource/reportmanagement/published/CoC_PopSub_State_CA_2017.pdf" target="blank">26 percent of the nation’s total homeless population suffers from mental illness</a>, while 18 percent struggle with substance abuse, and 24 percent identify as victims of domestic violence in 2017.';
 		chart5_aside.classList.add("chart-aside");
 		text.push(p);
 
@@ -1028,9 +1024,8 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
 		caption.id = "chart6-caption";
-		var caption_t = document.createTextNode("Source: Department of Housing and Urban Development");
+		caption.innerHTML = "<a href='https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/' target='blank'>Source: Department of Housing and Urban Development</a>";
 		text.push(caption);
-		caption.appendChild(caption_t);
 
 		var chart6_aside = document.createElement('div');
 		chart6_aside.id = "chart6_aside";
@@ -1060,9 +1055,8 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
-		var caption_t = document.createTextNode("Source: California Department of Finance");
+		caption.innerHTML = "<a href='http://www.ebudget.ca.gov/2018-19/pdf/Enacted/BudgetSummary/FullBudgetSummary.pdf' target='blank'>Source: California Department of Finance</a>";
 		text.push(caption);
-		caption.appendChild(caption_t);
 
 		var chart7_aside = document.createElement('div');
 		v7.appendChild(chart7_aside);
@@ -1078,7 +1072,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 	}
 }
 
-var pymChild = new pym.Child({polling: 500});
+var pymChild = new pym.Child({polling: 1000});
 
 w.onscroll = function() {
 	triggerViz(w.scrollTop);
