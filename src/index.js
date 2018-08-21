@@ -1078,7 +1078,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 	}
 }
 
-var pymChild = new pym.Child();
+var pymChild = new pym.Child({polling: 500});
 
 w.onscroll = function() {
 	triggerViz(w.scrollTop);
