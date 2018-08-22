@@ -1,11 +1,11 @@
 import './style.css';
-import aos from 'aos'; //https://github.com/michalsnik/aos/tree/v2
 import * as echarts from 'echarts/dist/echarts.js';
 import * as ecStat from 'echarts-stat';
 import Nguyen from './Nguyen.mp3';
 import NguyenPhoto from './Nguyen.jpg';
-import Rodriguez from './Rodriguez_clip.mp3';
 import RodriguezPhoto from './Rodriguez.jpg';
+import CADream from './CADream.jpg';
+import logo from './logo.png';
 import * as pym from 'pym.js';
 
 var viewPortTag = document.createElement('meta');
@@ -18,6 +18,11 @@ function header() {
 	var header = document.createElement('section');
 	header.id = "header";
 	header.classList.add("wrapper-child");
+
+	var img = document.createElement("IMG");
+	img.src = logo;
+	img.id = "logo";
+	header.appendChild(img);
 
 	var title = document.createElement('H1');
 	var t = document.createTextNode("A deeper dive into California's housing and homelessness crisis");
@@ -135,7 +140,7 @@ function audio1() {
 	img.id = "Nguyen-photo";
 	audio1.appendChild(img);
 	var photoCred = document.createElement('p');
-	photoCred.appendChild(document.createTextNode("Jenny Nguyen, with her parents Khanh Nguyen and Tammy Vo, sitting in their home in Sacramento built by Habitat for Humanity. Photo Credit: Robbie Short"));
+	photoCred.innerHTML = "Jenny Nguyen, with her parents Khanh Nguyen and Tammy Vo, sitting in their home in Sacramento built by Habitat for Humanity. Photo Credit: Robbie Short";
 	photoCred.className = 'photo-cred';
 	audio1.appendChild(photoCred);
 	var caption = document.createElement('CAPTION');
@@ -880,6 +885,11 @@ async function renderText(text_div, text) {
 	}
 }
 
+async function appendDiv(childDiv, parentDiv) {
+	var result = await resolveAfterTrigger();
+	parentDiv.appendChild(childDiv);
+}
+
 function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, genViz - function to generate echart
 	if ((scrollPos > v1.offsetTop-(v1.offsetTop*0.7)) && (!viz1_trigger)) {
 		viz1_trigger = true;
@@ -1067,7 +1077,23 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		p.innerHTML = 'The <a href="http://www.ebudget.ca.gov/FullBudgetSummary.pdf" target="blank">2018 state budget</a> has set aside nearly $5 billion to address housing affordability and homelessness. More than $600 million was allotted to specific homelessness response programs, which include plans to establish permanent housing, provide support for mental health services, and assist homeless youth and victims of domestic violence.';
 		text.push(p);
 
+		var branding_div = document.createElement('div');
+		branding_div.id = "branding_div";
+		v7.appendChild(branding_div);
+
+		var branding = [];
+
+		var img = document.createElement("IMG");
+		img.src = CADream;
+		img.id = "CADream";
+		branding.push(img);
+		var desc = document.createElement('p');
+		desc.innerHTML = "This story is part of The California Dream project, a statewide nonprofit media collaboration focused on issues of economic opportunity, quality-of-life, and the future of the California Dream. Partner organizations include CALmatters, Capital Public Radio, KPBS, KPCC, and KQED with support provided by the Corporation for Public Broadcasting and the James Irvine Foundation. Share your California dream. On Twitter, use the hashtag #CADream. <a href='https://calmatters.org/articles/category/projects/california-dream/' target='blank'>Read More California Dream stories.</a>";
+		branding.push(desc);
+
 		renderText(chart7_aside,text);
+		renderText(branding_div,branding);
+		appendDiv(branding_div,v7);
 	}
 }
 

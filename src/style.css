@@ -14,7 +14,11 @@ a {
 	color: #000080;
 }
 
-#viz4_div a, #viz5_div a, #viz7_div a {
+#logo {
+	width: 12vw;
+}
+
+#viz4_div a, #viz5_div a, #viz7_div a, #audio1 a {
 	color: #D4AC0D;
 }
 
@@ -52,6 +56,16 @@ p, caption {
 
 #viz4_div {
 	height: 180vh;
+}
+
+#viz7_div {
+	height: 160vh;
+}
+
+#CADream {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
 }
 
 img {
@@ -166,6 +180,30 @@ blockquote {
     width: 50vw;
     margin-left: auto;
 		margin-right: auto;
+}
+
+#branding_div {
+	grid-column: 2 / span 1;
+	grid-row-start: 3;
+	grid-row-end: 3;
+	width: 30vw;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	height: 35vh;
+}
+
+#branding_div img {
+	margin-top: auto;
+}
+
+#branding_div p {
+	font-size: 1.5vh;
+	padding-left: 4vw;
+	padding-right: 4vw;
+	padding-top, padding-bottom: 1vh;
 }
 
 .chart-aside > p, .chart-aside > h2 {
@@ -375,6 +413,11 @@ blockquote {
 	#chart6_aside {
 		margin-top: -20vh;
 	}
+	#branding_div {
+		width: 70vw;
+		padding-bottom: 6vh;
+		position: relative;
+	}
 }
 
 @media (max-height: 1000px) and (max-width: 1024px) and (min-width: 700px) {
@@ -421,6 +464,9 @@ blockquote {
 }
 
 @media (min-width: 1300px) {
+	#branding_div {
+		height: 40vh;
+	}
 	.chart-caption {
 		margin-top: -20vh;
 	}
@@ -432,7 +478,7 @@ blockquote {
 	}
 	#header h1 {
 		width: 45vw;
-		font-size: 7vh;
+		font-size: 6.5vh;
 	}
 	.echart-div {
 		width: 45vw;
@@ -538,6 +584,9 @@ blockquote {
 	}
 	#audio1, #audio2 {
 		height: 110vh;
+	}
+	#branding_div {
+		width: 80vw;
 	}
 }
 
