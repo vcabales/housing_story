@@ -126,7 +126,7 @@ function audio1() {
 	audio1.classList.add("wrapper-child");
 
 	var h2 = document.createElement('H2');
-	var t = document.createTextNode("California families struggle to find homes as housing cost burdens remain high.");
+	var t = document.createTextNode("California families struggle to find homes as housing cost burdens remain high");
 	h2.appendChild(t);
 	audio1.appendChild(h2);
 
@@ -139,7 +139,7 @@ function audio1() {
 	photoCred.className = 'photo-cred';
 	audio1.appendChild(photoCred);
 	var caption = document.createElement('CAPTION');
-	caption.appendChild(document.createTextNode("The Nguyen family struggled to pay their rent for about four years after immigrating from Vietnam in 2008. The family bounced around from Los Angeles to San Jose to Milpitas, separating at times because of housing costs.. They eventually managed to secure permanent housing  in Sacramento through Habitat for Humanity. Listen to their story."));
+	caption.appendChild(document.createTextNode("The Nguyen family struggled to pay their rent for about four years after immigrating from Vietnam in 2008. The family bounced around from Los Angeles to San Jose to Milpitas, separating at times because of housing costs. They eventually managed to secure permanent housing  in Sacramento through Habitat for Humanity. Listen to their story."));
 	audio1.appendChild(caption);
 
 	var player = document.createElement('audio');
@@ -283,7 +283,7 @@ async function chart4(container) { // Relationship between median rent and homel
 	let option = null;
 	option = {
 	    title: {
-	        text: 'Median Rent vs Homelessness Rate by State Population',
+	        text: 'Median Rent vs Homelessness Rate',
 	        subtext: 'Research by UCLA Economics Professor William Yu',
 	        sublink: 'https://www.anderson.ucla.edu/centers/ucla-anderson-forecast/june-2018-economic-outlook',
 	        left: 'center',
@@ -528,7 +528,7 @@ function audio2() {
 	audio2.classList.add("wrapper-child");
 
 	var h2 = document.createElement('H2');
-	var t = document.createTextNode("As rents continue to increase, families fight for housing security.");
+	var t = document.createTextNode("As rents continue to increase, families fight for housing security");
 	h2.appendChild(t);
 	audio2.appendChild(h2);
 
@@ -558,7 +558,7 @@ async function chart5(container) {
 	option = {
 			color: ['#cc3700', '#0066CC'],
 			title: {
-				text: 'Sheltered vs Unsheltered Homeless in CA',
+				text: 'Sheltered vs Unsheltered Homeless',
 				left: 'center',
 				textStyle: {
 					color:'#EFF6EE'
@@ -579,7 +579,7 @@ async function chart5(container) {
 	    },
 	    legend: {
 					top: '7%',
-	        data:['Sheltered', 'Unsheltered'],
+	        data:['Sheltered in CA', 'Unsheltered in CA'],
 					textStyle: {
 						color: '#EFF6EE'
 					}
@@ -620,7 +620,7 @@ async function chart5(container) {
 	    ],
 	    series : [
 	        {
-	            name:'Sheltered',
+	            name:'Sheltered in CA',
 							stack: '总量',
 	            type:'bar',
 	            label: {
@@ -632,7 +632,7 @@ async function chart5(container) {
 	            data:[138986-90475,136531-89566,123678-72901,123480-72581,125128-74437,120098-74208,118552-72998,113952-71437,115738-73699,118142-78390,134278-91642]
 	        },
 	        {
-	            name:'Unsheltered',
+	            name:'Unsheltered in CA',
 	            type:'bar',
 	            stack: '总量',
 	            label: {
@@ -674,7 +674,7 @@ async function chart6(container) {
 	        }
 	    },
 			title: {
-				text: 'Homelessness Counts in the 5 Most Populous States',
+				text: 'Homelessness Counts by State',
 				left: 'center'
 			},
 	    legend: {
@@ -704,7 +704,7 @@ async function chart6(container) {
 	    yAxis: [
 	        {
 	            type: 'value',
-							name: 'Numbre of Homeless',
+							name: 'Number of Homeless',
 							nameLocation: 'middle',
 							nameGap: 50
 	        }
@@ -770,7 +770,7 @@ async function chart7(container) { // TODO: Fix formatting
 	var result = await resolveAfterTrigger();
 	var myChart = echarts.init(container);
 	let option = null;
-	var my_dict = {'Emergency Homeless Aid Block Grants': "The Homeless Emergency Aid program bridges funding" +"<br/>"+ "for local governments in assisting immediate homeless" +"<br/>"+"needs. The program provides flexible block grants to"+"<br/>"+"jurisdictions that declare a shelter crisis.",
+	var my_dict = {'Emergency Homeless Aid Block Grants': "The Homeless Emergency Aid program bridges funding" +"<br/>"+ "for local governments in assisting immediate homeless" +"<br/>"+"needs. The program provides flexible block grants to"+"<br/>"+"jurisdictions that declare a shelter crisis, meaning that"+"<br/>"+" the number of homeless residents is significant "+"<br/>"+"enough to pose a health and safety threat.",
 		"Council Administration" : "The state homeless council works to connect"+"<br/>"+"individuals and families with permanent housing.",
 		"CalWORKS Housing Support Program" : "This program provides funds to help low-income"+"<br/>"+"families secure permanent housing.",
 		"CalWORKS Homeless Assistance Program" : "As part of CalWORKS, this program increases"+"<br/>"+ "funding for housing insecure families to $85"+"<br/>"+ "per day from $65.",
@@ -1004,7 +1004,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		text.push(h2);
 		chart5_aside.appendChild(h2);
 		var p = document.createElement('p');
-		p.innerHTML = 'California alone accounts for 25 percent of the nation’s homeless population, <a href="https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/" target="blank">at 134,000 on a given night.</a> The majority of California’s unsheltered homeless population is chronically homeless, meaning that they have been homeless for a year or more or have experienced at least four episodes of homelessness in the past three years. Individuals experiencing chronic homelessness often have serious mental or physical illnesses.<br/><br/>According to the Department of Housing and Urban Development, <a href="https://www.hudexchange.info/resource/reportmanagement/published/CoC_PopSub_State_CA_2017.pdf" target="blank">26 percent of the nation’s total homeless population suffers from mental illness</a>, while 18 percent struggle with substance abuse, and 24 percent identify as victims of domestic violence in 2017.';
+		p.innerHTML = 'California alone accounts for 25 percent of the nation’s homeless population, <a href="https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/" target="blank">at 134,000 on a given night.</a> The majority of California’s unsheltered homeless population is chronically homeless, meaning that they have been homeless for a year or more or have experienced at least four episodes of homelessness in the past three years. Individuals experiencing chronic homelessness often have serious mental or physical illnesses.<br/><br/>According to the Department of Housing and Urban Development, <a href="https://www.hudexchange.info/resource/reportmanagement/published/CoC_PopSub_State_CA_2017.pdf" target="blank">in 2017 26 percent of California’s total homeless population suffered from mental illness</a>, while 18 percent struggled with substance abuse, and 24 percent identified as victims of domestic violence.';
 		chart5_aside.classList.add("chart-aside");
 		text.push(p);
 

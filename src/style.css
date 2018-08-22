@@ -101,10 +101,10 @@ blockquote {
 	grid-row-start: 5;
 	grid-row-end: 5;
 	grid-column: 2 / span 1;
-	width: 70%;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	text-align: justify;
+	text-align: center;
 	font-style: italic;
 	font-size: 2.5vh;
 }
@@ -267,6 +267,12 @@ blockquote {
 	#viz4_div {
 		height: 400vh;
 	}
+	#viz1_div caption {
+		margin-top: -45vh;
+	}
+	#viz2_div caption {
+		margin-top: -15vh;
+	}
 	.chart-caption {
 		font-size: 1vh;
 	}
@@ -279,6 +285,18 @@ blockquote {
 	caption {
 		width: 100%;
 		font-size: 2vh;
+	}
+	#chart4_aside {
+		margin-top: -90vh;
+	}
+	#viz5_div caption {
+		margin-top: -70vh;
+	}
+	#viz6_div caption {
+		margin-top: -70vh;
+	}
+	#viz7_div caption {
+		margin-top: -50vh;
 	}
 }
 
@@ -303,7 +321,7 @@ blockquote {
 		width: 100%;
 	}
 	#chart4_div {
-		height: 30%;
+		height: 40%;
 		width: 100%;
 	}
 	#viz4_div caption {
@@ -341,6 +359,21 @@ blockquote {
 	blockquote {
 		grid-column: 1 / span 2;
 		width: 80%;
+	}
+	#viz5_div {
+		height: 180vh;
+	}
+	#chart5_div {
+		height: 50%;
+	}
+	#chart6_div {
+		height: 50%;
+	}
+	#viz6_div {
+		height: 140vh;
+	}
+	#chart6_aside {
+		margin-top: -20vh;
 	}
 }
 
@@ -438,7 +471,7 @@ blockquote {
 	}
 	#header h1 {
 		margin-top: -5vh;
-		font-size: 6.5vh;
+		font-size: 6vh;
 	}
 	.viz-div {
 		height: 130vh;
@@ -449,6 +482,12 @@ blockquote {
 	}
 	#chart4_div {
 		height: 70%;
+	}
+	#viz4_div caption {
+		margin-top: -10vh;
+	}
+	#chart5_div {
+		height: 35%;
 	}
 	#chart7_div {
 		height: 75%;
