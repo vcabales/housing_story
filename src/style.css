@@ -414,6 +414,12 @@ blockquote {
 	}
 }
 
+@media (max-width: 1300px) {
+	#viz6_div caption {
+		margin-top: 0.5vh;
+	}
+}
+
 @media (min-width: 1300px) {
 	.chart-caption {
 		margin-top: -20vh;

@@ -284,7 +284,6 @@ async function chart4(container) { // Relationship between median rent and homel
 	option = {
 	    title: {
 	        text: 'Median Rent vs Homelessness Rate',
-	        subtext: 'Research by UCLA Economics Professor William Yu',
 	        sublink: 'https://www.anderson.ucla.edu/centers/ucla-anderson-forecast/june-2018-economic-outlook',
 	        left: 'center',
 					textStyle: {
@@ -940,7 +939,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		h2.appendChild(t);
 		text.push(h2);
 		var p = document.createElement('p');
-		p.innerHTML = "Californian renters who earn less than the state’s median income have been especially hurt by the housing crisis. Over half of the state’s renters pay <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>30 percent or more</a> of their income towards housing. More than 25 percent of renters are severely cost burdened, paying 50 percent or more of their income in rent. Meanwhile, two-thirds of extremely low-income Californians <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>suffer severe cost burdens, according to the California Budget & Policy Center.</a> ";
+		p.innerHTML = "Californian renters who earn less than the state’s median income have been especially hurt by the housing crisis. Over half of the state’s renters pay <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>30 percent or more</a> of their income toward housing. More than 25 percent of renters are severely cost burdened, paying 50 percent or more of their income in rent. Meanwhile, two-thirds of extremely low-income Californians <a href='https://calbudgetcenter.org/wp-content/uploads/SCANPH_Sara-Kimberlin_9.22.2017.pdf' target='blank'>suffer severe cost burdens, according to the California Budget & Policy Center.</a> ";
 		text.push(p);
 
 		renderText(chart2_aside,text);
@@ -970,7 +969,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		text.push(h2);
 		var p = document.createElement('p');
 		p.innerHTML = 'Housing prices have skyrocketed in California partly because there is a major shortage of homes within the state. Although California needs to build <a href="https://www.kqed.org/news/11666284/5-reasons-californias-housing-costs-are-so-high" target="blank">180,000 additional units of housing</a> annually to keep up with projected household growth, the state has averaged less than half of that over the past decade. Due to this shortage, <a href="https://lao.ca.gov/reports/2015/finance/housing-costs/housing-costs.aspx" target="blank">California’s homeownership rate has declined to its lowest rate since the 1940s.</a> Today, <a href="https://www.census.gov/quickfacts/fact/table/ca/PST045217#viewtop" target="blank">54.1 percent of Californians own their homes.</a><br/><br/>“A state with higher housing costs, higher rental costs, and lower household income has a higher homelessness rate,” said William Yu, an economics professor at UCLA.<br/><br/>';
-		p.innerHTML += "Yu’s research found that median household income, housing supply growth, and population density also factor in predicting a state's homelessness rate. ";
+		p.innerHTML += "Yu’s research found that median household income, housing supply growth, and population density are also factors in predicting a state's homelessness rate. ";
 		text.push(p);
 		chart4_aside.classList.add("chart-aside");
 		chart4_aside.id = "chart4_aside";
@@ -1004,7 +1003,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		text.push(h2);
 		chart5_aside.appendChild(h2);
 		var p = document.createElement('p');
-		p.innerHTML = 'California alone accounts for 25 percent of the nation’s homeless population, <a href="https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/" target="blank">at 134,000 on a given night.</a> The majority of California’s unsheltered homeless population is chronically homeless, meaning that they have been homeless for a year or more or have experienced at least four episodes of homelessness in the past three years. Individuals experiencing chronic homelessness often have serious mental or physical illnesses.<br/><br/>According to the Department of Housing and Urban Development, <a href="https://www.hudexchange.info/resource/reportmanagement/published/CoC_PopSub_State_CA_2017.pdf" target="blank">in 2017 26 percent of California’s total homeless population suffered from mental illness</a>, while 18 percent struggled with substance abuse, and 24 percent identified as victims of domestic violence.';
+		p.innerHTML = 'California alone accounts for 25 percent of the nation’s homeless population, <a href="https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/" target="blank">at 134,000 on a given night.</a> The majority of California’s unsheltered homeless population is chronically homeless, meaning that they have been homeless for a year or more or have experienced at least four episodes of homelessness in the past three years. Individuals experiencing chronic homelessness often have serious mental or physical illnesses.<br/><br/>According to the U.S. Department of Housing and Urban Development, <a href="https://www.hudexchange.info/resource/reportmanagement/published/CoC_PopSub_State_CA_2017.pdf" target="blank">in 2017 26 percent of California’s total homeless population suffered from mental illness</a>, while 18 percent struggled with substance abuse, and 24 percent identified as victims of domestic violence.';
 		chart5_aside.classList.add("chart-aside");
 		text.push(p);
 
@@ -1036,7 +1035,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		text.push(h2);
 		chart6_aside.appendChild(h2);
 		var p = document.createElement('p');
-		p.innerHTML = 'The state has the highest percentage of unsheltered homeless individuals in the country, at slightly under 70 percent, according to <a href="https://www.hudexchange.info/resources/documents/2017-AHAR-Part-1.pdf" target="blank">data</a> from the US Department of Housing and Urban Development. This means that the vast majority of the state’s homeless population is not living in emergency shelters or transitional housing. Instead, they are living on the street or in a place “not meant for human habitation”.';
+		p.innerHTML = 'The state has the highest percentage of unsheltered homeless individuals in the country, at slightly under 70 percent, according to <a href="https://www.hudexchange.info/resources/documents/2017-AHAR-Part-1.pdf" target="blank">data</a> from the U.S. Department of Housing and Urban Development. This means that the vast majority of the state’s homeless population is not living in emergency shelters or transitional housing. Instead, they are living on the street or in a place “not meant for human habitation."';
 		chart6_aside.classList.add("chart-aside");
 		text.push(p);
 
@@ -1065,7 +1064,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		h2.appendChild(document.createTextNode("Increase in state homelessness and housing affordability spending"));
 		text.push(h2);
 		var p = document.createElement('p');
-		p.innerHTML = 'The <a href="http://www.ebudget.ca.gov/FullBudgetSummary.pdf" target="blank">2018 state budget</a> has set aside nearly $5 billion for housing affordability and homelessness. More than $600 million was allotted to specific homelessness response programs, which include measures to establish permanent housing, provide support for mental health services, and assist homeless youth and victims of domestic violence.';
+		p.innerHTML = 'The <a href="http://www.ebudget.ca.gov/FullBudgetSummary.pdf" target="blank">2018 state budget</a> has set aside nearly $5 billion to address housing affordability and homelessness. More than $600 million was allotted to specific homelessness response programs, which include plans to establish permanent housing, provide support for mental health services, and assist homeless youth and victims of domestic violence.';
 		text.push(p);
 
 		renderText(chart7_aside,text);
