@@ -15,7 +15,8 @@ a {
 }
 
 #logo {
-	width: 12vw;
+	width: 20vw;
+	margin-top: -5vh;
 }
 
 #viz4_div a, #viz5_div a, #viz7_div a, #audio1 a {
@@ -59,7 +60,11 @@ p, caption {
 }
 
 #viz7_div {
-	height: 160vh;
+	height: 170vh;
+}
+
+#viz5_div caption {
+	margin-top: 0.5vh;
 }
 
 #CADream {
@@ -192,7 +197,7 @@ blockquote {
 	border-style: solid;
 	border-color: white;
 	border-width: 1px;
-	height: 35vh;
+	height: 45vh;
 }
 
 #branding_div img {
@@ -464,9 +469,6 @@ blockquote {
 }
 
 @media (min-width: 1300px) {
-	#branding_div {
-		height: 40vh;
-	}
 	.chart-caption {
 		margin-top: -20vh;
 	}

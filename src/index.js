@@ -5,7 +5,6 @@ import Nguyen from './Nguyen.mp3';
 import NguyenPhoto from './Nguyen.jpg';
 import RodriguezPhoto from './Rodriguez.jpg';
 import CADream from './CADream.jpg';
-import logo from './logo.png';
 import * as pym from 'pym.js';
 
 var viewPortTag = document.createElement('meta');
@@ -18,11 +17,6 @@ function header() {
 	var header = document.createElement('section');
 	header.id = "header";
 	header.classList.add("wrapper-child");
-
-	var img = document.createElement("IMG");
-	img.src = logo;
-	img.id = "logo";
-	header.appendChild(img);
 
 	var title = document.createElement('H1');
 	var t = document.createTextNode("A deeper dive into California's housing and homelessness crisis");
@@ -204,7 +198,7 @@ async function chart2(container) {
 	        type: 'value',
 					name: 'Percentage of Renters',
 					nameLocation: 'middle',
-					nameGap: 20,
+					nameGap: 19,
 					axisLabel: {
 						formatter: "{value}%"
 					}
@@ -546,7 +540,7 @@ function audio2() {
 	audio2.appendChild(photoCred);
 	var caption = document.createElement('CAPTION');
 	caption.innerHTML = 'As a teen, Miriam Rodriguez faced homelessness after immigrating from Mexico to reunite with her mother. During this time, she attended high school while living in a garage in Los Angeles. Today, she is an advocate with the Residents United Network of Housing California and a mother of three. Her family is currently struggling to find affordable housing in San Diego. <br/><br/>“One of the things I share with my daughters is to see that we might be struggling, but it’s important to remember that other families are going through worse,” Rodriguez said. “Sometimes as we’re walking to school, we see that other families are living in cars in San Diego. This is an area where I could never imagine seeing that happening.” <br/><br/>';
-	caption.innerHTML += 'Dreams for Change, a San Diego nonprofit that assists homeless individuals, estimates that <a href="http://www.sandiegouniontribune.com/news/homelessness/sd-me-homeless-parkin-20170619-story.html" target="blank">about 1,000 people in the county live in cars.</a>'
+	caption.innerHTML += 'Dreams for Change, a San Diego nonprofit that assists homeless individuals, estimates that about 1,000 people in the county live in cars.'
 	audio2.appendChild(caption);
 
 	return audio2;
@@ -599,7 +593,7 @@ async function chart5(container) {
 	            type : 'value',
 							name: 'Number of Homeless',
 							nameLocation: 'middle',
-							nameGap: 18,
+							nameGap: 17,
 							axisLine: {
 								lineStyle: {
 									color: '#EFF6EE'
@@ -904,10 +898,8 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
-		caption.innerHTML = "<a href='http://www.hcd.ca.gov/policy-research/plans-reports/docs/SHA_MainDoc_2_15_Final.pdf' target='blank'>Source: California Department of Housing and Community Development, California Housing Partnership. All figures in 2000 dollars.</a>";
-		// var caption_t = document.createTextNode("Source: California Department of Housing and Community Development, California Housing Partnership. All figures in 2000 dollars.");
+		caption.innerHTML = "Source: California Department of Housing and Community Development, California Housing Partnership. All figures in 2000 dollars.";
 		text.push(caption);
-		// caption.appendChild(caption_t);
 
 		var chart1_aside = document.createElement('div');
 		chart1_aside.classList.add("chart-aside");
@@ -941,7 +933,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
-		caption.innerHTML = "<a href='http://www.jchs.harvard.edu/research/americas-rental-housing-2017' target='blank'>Source: Harvard Joint Center for Housing Studies 2016</a>";
+		caption.innerHTML = "Source: Harvard Joint Center for Housing Studies 2016";
 		text.push(caption);
 
 		var h2 = document.createElement('H2');
@@ -1002,7 +994,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
-		caption.innerHTML = "<a href='https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/' target='blank'>Source: Department of Housing and Urban Development</>";
+		caption.innerHTML = "Source: Department of Housing and Urban Development";
 		text.push(caption);
 
 		var chart5_aside = document.createElement('div');
@@ -1033,7 +1025,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
 		caption.id = "chart6-caption";
-		caption.innerHTML = "<a href='https://www.hudexchange.info/resource/3031/pit-and-hic-data-since-2007/' target='blank'>Source: Department of Housing and Urban Development</a>";
+		caption.innerHTML = "Source: Department of Housing and Urban Development";
 		text.push(caption);
 
 		var chart6_aside = document.createElement('div');
@@ -1064,7 +1056,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 
 		var caption = document.createElement('CAPTION');
 		caption.className = "chart-caption";
-		caption.innerHTML = "<a href='http://www.ebudget.ca.gov/2018-19/pdf/Enacted/BudgetSummary/FullBudgetSummary.pdf' target='blank'>Source: California Department of Finance</a>";
+		caption.innerHTML = "Source: California Department of Finance";
 		text.push(caption);
 
 		var chart7_aside = document.createElement('div');
