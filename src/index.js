@@ -25,8 +25,7 @@ function header() {
 
 	var byline = document.createElement('p');
 	byline.id = "byline";
-	var t2 = document.createTextNode("By Victoria Cabales");
-	byline.appendChild(t2);
+	byline.innerHTML = "By Victoria Cabales | <a href='https://calmatters.org/' target='blank'>CALmatters</a>"
 	header.appendChild(byline);
 
 	var info = document.createElement('p');
@@ -576,7 +575,7 @@ async function chart5(container) {
 	        }
 	    },
 	    legend: {
-					top: '7%',
+					top: '5%',
 	        data:['Sheltered in CA', 'Unsheltered in CA'],
 					textStyle: {
 						color: '#EFF6EE'
@@ -591,9 +590,6 @@ async function chart5(container) {
 	    xAxis : [
 	        {
 	            type : 'value',
-							name: 'Number of Homeless',
-							nameLocation: 'middle',
-							nameGap: 17,
 							axisLine: {
 								lineStyle: {
 									color: '#EFF6EE'
@@ -604,9 +600,6 @@ async function chart5(container) {
 	    yAxis : [
 	        {
 	            type : 'category',
-							name: 'Year',
-							nameLocation: 'middle',
-							nameGap: 40,
 							axisLine: {
 								lineStyle: {
 									color: '#EFF6EE'
@@ -781,6 +774,7 @@ async function chart7(container) { // TODO: Fix formatting
 	option = {
 		color: ['#D782BA','#EDDDD4','#E49273','#08B2E3','#E09F3E','#FCD0A1','#6D9F71','#7180AC'],
 	    title : {
+					bottom: '75%',
 	        text: 'New Homelessness Spending in CA',
 	        x:'center',
 					textStyle: {
@@ -998,6 +992,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		text.push(caption);
 
 		var chart5_aside = document.createElement('div');
+		chart5_aside.id = "chart5_aside";
 		v5.appendChild(chart5_aside);
 		var h2 = document.createElement('H2');
 		var t = document.createTextNode("Homelessness is on the rise");
@@ -1060,6 +1055,7 @@ function triggerViz(scrollPos) { // scrollPos - expected pos of visualization, g
 		text.push(caption);
 
 		var chart7_aside = document.createElement('div');
+		chart7_aside.id = "chart7_aside";
 		v7.appendChild(chart7_aside);
 		chart7_aside.classList.add("chart-aside");
 		var h2 = document.createElement('H2');

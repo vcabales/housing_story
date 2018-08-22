@@ -19,7 +19,11 @@ a {
 	margin-top: -5vh;
 }
 
-#viz4_div a, #viz5_div a, #viz7_div a, #audio1 a {
+#viz5_div {
+	height: 150vh;
+}
+
+#viz4_div a, #viz5_div a, #viz7_div a, #audio1 a, #header a {
 	color: #D4AC0D;
 }
 
@@ -38,13 +42,18 @@ p, caption {
 }
 
 #chart5_div {
-	height: 70%;
+	height: 100%;
 }
 
 #chart7_div {
 	width: 100%;
+	height: 170%;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#viz7_div caption {
+	margin-top: 1vh;
 }
 
 #viz1_div, #viz2_div,#viz6_div, #audio2 {
@@ -61,10 +70,6 @@ p, caption {
 
 #viz7_div {
 	height: 170vh;
-}
-
-#viz5_div caption {
-	margin-top: 0.5vh;
 }
 
 #CADream {
@@ -198,6 +203,7 @@ blockquote {
 	border-color: white;
 	border-width: 1px;
 	height: 45vh;
+	margin-bottom: 5vh;
 }
 
 #branding_div img {
@@ -341,6 +347,12 @@ blockquote {
 	#viz7_div caption {
 		margin-top: -50vh;
 	}
+	#chart6_aside {
+		margin-top: -50vh;
+	}
+	#viz7_div {
+		height: 300vh;
+	}
 }
 
 @media (max-width: 450px) and (min-height: 550px){ /* Portrait mode */
@@ -371,11 +383,21 @@ blockquote {
 		margin-top: 10vh;
 	}
 	#chart4_aside {
-		margin-top: -20vh;
+		margin-top: -50vh;
+	}
+	#chart5_aside {
+		margin-top: -30vh;
+	}
+	#audio2 caption {
+		margin-bottom: 25vh;
 	}
 	.chart-aside {
 		font-size: 2vh;
 		width: 70vw;
+		margin-top: -15vh;
+	}
+	#chart7_aside {
+		margin-top: -10vh;
 	}
 	#byline {
 		margin-top: -10vh;
@@ -416,12 +438,15 @@ blockquote {
 		height: 140vh;
 	}
 	#chart6_aside {
-		margin-top: -20vh;
+		margin-top: -35vh;
 	}
 	#branding_div {
 		width: 70vw;
 		padding-bottom: 6vh;
 		position: relative;
+	}
+	#audio1 {
+		height: 150vh;
 	}
 }
 
@@ -533,6 +558,9 @@ blockquote {
 	.echart-div {
 		height: 65%;
 		width: 100%;
+	}
+	#viz7_div .chart-aside {
+		margin-top: -10vh;
 	}
 	#chart4_div {
 		height: 70%;
