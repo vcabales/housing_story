@@ -657,7 +657,7 @@ async function chart6(container) {
 	var myChart = echarts.init(container);
 	let option = null;
 	option = {
-	    color: ['#ED9200', '#A4303F', '#3E77E0', '#DABFFF', '#FFF78C'],
+	    color: ['#841927', '#1A1487', '#FF852D', '#9BC9FF','#FFCE47'],
 	    tooltip: {
 	        trigger: 'axis',
 	        axisPointer: {
