@@ -534,7 +534,7 @@ function audio2() {
 	img.id = "Rodriguez-photo";
 	audio2.appendChild(img);
 	var photoCred = document.createElement('p');
-	photoCred.appendChild(document.createTextNode("Photo Credit: City Heights Community Development Corporation"));
+	photoCred.appendChild(document.createTextNode("Photo Credit: Alex Matthews"));
 	photoCred.className = 'photo-cred';
 	audio2.appendChild(photoCred);
 	var caption = document.createElement('CAPTION');
